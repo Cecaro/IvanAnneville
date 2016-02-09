@@ -13,6 +13,10 @@ figcaption {
   line-height: 24px;
   font-size: 16px;
 }
+figcaption:empty:before {
+  opacity: 0.4;
+  content: "Type to add caption (optional)";
+}
 
 figure[data-type=table] {
   clear: both;
@@ -45,6 +49,9 @@ figure[data-type=image] {
   position: relative;
   margin-bottom: 24px;
 }
+figure[data-type=image] .wy-figure-controls {
+  top: 0px;
+}
 figure[data-type=image] img {
   width: 100%;
 }
@@ -60,7 +67,7 @@ figure[data-type=image].wy-figure-small {
 }
 
 figure[data-type=quote] {
-  font-family: "Georgia", serif;
+  font-family: "Roboto Slab", "ff-tisa-web-pro", "Georgia", Arial, sans-serif;
   margin-bottom: 24px;
   margin-left: 24px;
   font-style: italic;
@@ -71,6 +78,9 @@ figure[data-type=quote] {
 figure[data-type=quote] figcaption {
   font-weight: bold;
   text-align: left;
+}
+figure[data-type=quote] .wy-figure-controls {
+  margin-left: -5px;
 }
 figure[data-type=quote].wy-figure-medium {
   font-size: 20px;
@@ -90,6 +100,10 @@ figure[data-type=quote].wy-figure-left {
   margin-left: 0;
   margin-right: 24px;
 }
+figure[data-type=quote].wy-figure-left .wy-figure-controls {
+  margin-left: 0;
+  margin-right: -5px;
+}
 figure[data-type=quote] cite {
   display: block;
   text-align: left;
@@ -97,6 +111,10 @@ figure[data-type=quote] cite {
 }
 figure[data-type=quote] cite:before {
   content: "\2014\00a0";
+}
+figure[data-type=quote] cite:empty:before {
+  opacity: 0.4;
+  content: "\2014 Type to add citation (optional)";
 }
 
 .wy-figure-right {

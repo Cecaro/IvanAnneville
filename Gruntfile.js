@@ -20,35 +20,37 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     // Import Bourbon, Neat and Wyrm. Generate CSS from the /sass/ folder
-    sass: {
+    less: {
       dev: {
         options: {
-          style: 'expanded',
-          loadPath: ['sass']
+          // Uncomment the below line to include outside directories as well.
+          // paths: ['location/of/other/less/']
         },
         files: [{
+          // Files in the /less/ directory will go to /static/css/ when processed.
           expand: true,
-          cwd: 'sass',
-          src: ['app.scss'],
+          cwd: 'less',
+          src: ['app.less'],
           dest: 'static/css',
           ext: '.css'
         }]
       }
     },
     copy: {
-      foundation: {
+      bootstrap: {
         files: [
-          {expand: true, cwd: 'bower_components/foundation/scss/', src: ['**/*'], dest: 'sass'},
-          {expand: true, cwd: 'bower_components/foundation/js/', src: ['**/*'], dest: 'static/javascript/foundation/'},
+          {expand: true, cwd: 'bower_components/bootstrap/less/', src: ['**/*.less'], dest: 'less/bootstrap/'},
+          {expand: true, cwd: 'bower_components/bootstrap/dist/js/', src: ['bootstrap*.js'], dest: 'static/javascript/bootstrap/'},
+          {expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: ['*'], dest: 'static/fonts/'},
         ]
       }
     },
     // Watch for sass changes and build css using the sass task we set above
     watch: {
       options : {
-        files: ['sass/**/*.scss'],
-        tasks: ['sass','build']
-      }
+        files: ['less/**/*.less'],
+        tasks: ['less','build']
+      },
     }
   });
 
@@ -56,13 +58,14 @@ module.exports = function(grunt) {
   grunt.registerTask('reqs', ['copy']);
 
   // These are the custom grunt packages we're adding
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // NEVER REMOVE THESE LINES, OR ELSE YOUR PROJECT MAY NOT WORK
   require('./options/generatorOptions.js')(grunt);
   grunt.loadTasks('tasks');
 };
+
 
 
 
