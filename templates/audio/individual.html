@@ -39,5 +39,25 @@
         {# HTML5 audio player for your listening pleasure. #}
         <audio src="{{ item.audio_file.url }}" controls></audio>
       </li>
+      <li>
+        <strong>Checkbox: </strong>
+        {# List the checkboxes available. Output their values. #}
+        <ul>
+          {% for option in item.checkbox %}
+            {# Output the values for every option. Alternatively, wrap this in an if statement to only show True values. #}
+            <li>
+              {{ option.label }}: {{ option.value }}
+            </li>
+          {% endfor%}
+        </ul>
+      </li>
+      <li>
+        <strong>Preview URL: </strong>
+        {{ item.preview_url }}
+      </li>
+      <li>
+        <strong>Slug: </strong>
+        {{ item.slug }}
+      </li>
   </ul>
 {% endblock %}
