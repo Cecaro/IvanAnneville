@@ -35,14 +35,16 @@
 
       {% include "templates/partials/header.html" %}
 
-      {% block content %}{% endblock %}
-
+      <div class="container main-body">
+        {% block content %}{% endblock %}
+      </div>
       {% include "templates/partials/footer.html" %}
 
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
       <!-- build:js /static/javascript/minified.js -->
         <script src="/static/javascript/bootstrap/bootstrap.js"></script>
+        <script src="/static/javascript/main.js"></script>
       <!-- endbuild -->
 
       {% block scripts_extra %}{% endblock %}
