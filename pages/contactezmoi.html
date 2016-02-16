@@ -3,20 +3,5 @@
 {% block title %}{% parent %} - {{ cms.contactezmoi.name }}{% endblock %}
 {% block content %}
   <h1>{{ cms.contactezmoi.name }}</h1>
-  <ul>
-      <li>
-        <strong>Name: </strong>
-        {{ cms.contactezmoi.name }}
-      </li>
-      <li>
-        <strong>Create Date: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ cms.contactezmoi.create_date|date('F d Y') }}
-      </li>
-      <li>
-        <strong>Last Updated: </strong>
-        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
-        {{ cms.contactezmoi.last_updated|date('F d Y') }}
-      </li>
-  </ul>
+  <!-- for the form, look at formspree.io, it's free for up to 1000 emails per month! -->
 {% endblock %}

@@ -6285,9 +6285,6 @@ button.close {
     display: none !important;
   }
 }
-#colored {
-  background-color: green;
-}
 .navbar {
   border-bottom: 1px solid black;
 }
