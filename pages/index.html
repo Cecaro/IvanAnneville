@@ -4,6 +4,8 @@
 
 {% set name = 'Acceuil' %}
 {% set content = merge(cms.videos, cms.audio) %}
+{% set videos = cms.video %}
+{% set audios = cms.audio %}
 
 {% block content %}
 
@@ -16,9 +18,14 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="owl-carousel owl-theme">
-          {% for things in content %}
-            {% if content.featured %}
+          {% for thing in content %}
+            {% if thing.featured %}
             <div class="featured-content">
+              {% if thing in videos %}
+                <video width="300px" height="200px" controls><source="{{thing.video}}"><</video>
+              {% elseif thing in audio%}
+                <audio controls><source src="{{thing.audio}}" type="audio/mpeg"></audio>
+              {% endif %}
             </div>
             {% endif %}
           {% endfor %}

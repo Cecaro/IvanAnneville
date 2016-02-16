@@ -6291,3 +6291,22 @@ button.close {
 .navbar {
   border-bottom: 1px solid black;
 }
+.logo-div {
+  position: relative;
+  height: 75px;
+  top: 5px;
+}
+.logo-image {
+  height: 65px;
+  width: 50px;
+  float: left;
+}
+.logo-text {
+  font-size: 30px;
+  color: red;
+  float: left;
+  padding-left: 20px;
+}
+#navbar-items {
+  margin-top: 12px;
+}
