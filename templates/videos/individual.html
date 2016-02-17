@@ -37,7 +37,7 @@
       <li>
         <strong>Other file: </strong>
         {# Download link. #}
-        <a href="{{ item.other_file.url }}">Click to download</a>
+        <video src="{{ item.other_file.url }}">Click to download</video>
       </li>
       <li>
         <strong>Checkbox: </strong>
@@ -50,6 +50,14 @@
             </li>
           {% endfor%}
         </ul>
+      </li>
+      <li>
+        <strong>Preview URL: </strong>
+        {{ item.preview_url }}
+      </li>
+      <li>
+        <strong>Slug: </strong>
+        {{ item.slug }}
       </li>
   </ul>
 {% endblock %}
