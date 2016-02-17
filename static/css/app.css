@@ -6294,8 +6294,8 @@ button.close {
   top: 5px;
 }
 .logo-image {
-  height: 65px;
-  width: 50px;
+  height: 150px;
+  width: 130px;
   float: left;
 }
 .logo-text {
@@ -6303,6 +6303,9 @@ button.close {
   color: red;
   float: left;
   padding-left: 20px;
+}
+.centerIntroText {
+  text-align: center;
 }
 #navbar-items {
   margin-top: 12px;
