@@ -6304,6 +6304,12 @@ button.close {
   float: left;
   padding-left: 20px;
 }
+.nav-dropdown:hover {
+  background-color: grey;
+}
+.navbar-center {
+  text-align: center;
+}
 .centerIntroText {
   text-align: center;
 }
