@@ -6294,9 +6294,10 @@ button.close {
   top: 5px;
 }
 .logo-image {
-  height: 150px;
-  width: 130px;
+  height: 200px;
+  width: 133px;
   float: left;
+  position: absolute;
 }
 .logo-text {
   font-size: 30px;
@@ -6312,6 +6313,9 @@ button.close {
 }
 .centerIntroText {
   text-align: center;
+}
+.introduction {
+  background: url("/static/images/background_acceuil.png") repeat-x fixed center;
 }
 #navbar-items {
   margin-top: 12px;

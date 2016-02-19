@@ -1,0 +1,39 @@
+{% extends "templates/partials/base.html" %}
+
+{% block title %}{% parent %} - {{ cms.content.name }}{% endblock %}
+
+{% set content = merge(cms.videos, cms.audio) %}
+
+{% block content %}
+
+<!-- What I can do to apply the filters from links to this page is to
+have the javascript look at which button was used to link to the page
+and add an if statment to the html from the javascript doing that.-->
+
+  <h1>{{ cms.content.name }}</h1>
+  <ul>
+      <li>
+        <strong>Name: </strong>
+        {{ cms.content.name }}
+      </li>
+      <li>
+        <strong>Create Date: </strong>
+        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
+        {{ cms.content.create_date|date('F d Y') }}
+      </li>
+      <li>
+
+        <strong>Last Updated: </strong>
+        {# Format the date. You can use PHP's date function to format as needed. http://php.net/manual/en/function.date.php #}
+        {{ cms.content.last_updated|date('F d Y') }}
+      </li>
+      <li>
+        <strong>Preview URL: </strong>
+        {{ cms.content.preview_url }}
+      </li>
+      <li>
+        <strong>Slug: </strong>
+        {{ cms.content.slug }}
+      </li>
+  </ul>
+{% endblock %}
