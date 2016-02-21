@@ -4,10 +4,19 @@
 {% block content %}
   <h1>{{ cms.contactezmoi.name }}</h1>
   <!-- for the form, look at formspree.io, it's free for up to 1000 emails per month! -->
-  <form class="contact-me">
-    First Name: </br>
-    <input type="text" name="firstname" /></br>
-    Last Name: </br>
-    <input type="text" name="lastname" /></br>
+  <form method="POST" id="contactform">
+    Nom: </br>
+    <input type="text" name="name" placeholder="Votre nom" /></br>
+    Email: </br>
+    <input type="email" name="_replyto" placeholder="Votre email"/>
+    <textarea placeholder="Votre message"></textarea>
+    <input type="text" name="_gotcha" style="display:none" />
+    <input type="submit" value="Send" />
   </form>
+
+
+<script>
+  var contactform =  document.getElementById('contactform');
+  contactform.setAttribute('action', '//formspree.io/' + 'rbcerovic' + '@' + 'gmail' + '.' + 'com');
+</script>
 {% endblock %}

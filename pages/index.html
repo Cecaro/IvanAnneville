@@ -27,28 +27,38 @@
     </div>
     <div class="row">
       <div class="col-xs-12">
-        <div>
-        {% for item in audios %}
-          {% if item.checkbox %}
-            <audio controls="controls" src= {{ item.audio_file.url }}></audio>
-            <a href="{{item.audio_file.url}}" download="{{item.audio_file.url}}"> Audio download </a>
-          {%endif%}
-        {%endfor%}
-        </div>
-        {% for item2 in videos %}
-        <video width="200" height="300" controls="controls" src= {{item2.other_file.url}}></video>
-        <a href="{{item2.other_file.url}}" download="{{item2.other_file.url}}"> Video download </a>
-        {%endfor%}
-        <div class="owl-carousel owl-theme">
-          {% for thing in content %}
-            {% if thing.checkbox %}
-            <div class="featured-content">
-
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner">
+              {% for item in content %}
+                {% if item.checkbox && loop.first %}
+                <div class="item active">
+                  <video class="video-js" controls preload="auto" src= {{ item.media.url }}></video>
+                  <a href="{{item.media.url}}" download="{{item.media.url}}"> Download this! </a>
+                </div>
+                {% else %}
+                <div class="item">
+                  <video class="video-js" controls preload="auto" src= {{ item.media.url }}></video>
+                  <a href="{{item.media.url}}" download="{{item.media.url}}"> Download this! </a>
+                </div>
+                {%endif%}
+              {%endfor%}
             </div>
-            {% endif %}
-          {% endfor %}
+            <!-- Carousel controls -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
 
 {% endblock %}

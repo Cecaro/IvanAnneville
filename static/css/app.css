@@ -6285,6 +6285,10 @@ button.close {
     display: none !important;
   }
 }
+#full {
+  background: url("/static/images/background.png") no-repeat center center fixed;
+  background-size: cover;
+}
 .navbar {
   border-bottom: 1px solid black;
 }

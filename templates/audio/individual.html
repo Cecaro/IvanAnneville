@@ -35,9 +35,9 @@
         {{ item.publish_date|date('F d Y') }}
       </li>
       <li>
-        <strong>Audio file: </strong>
+        <strong>Media: </strong>
         {# HTML5 audio player for your listening pleasure. #}
-        <audio src="{{ item.audio_file.url }}" controls></audio>
+        <audio src="{{ item.media.url }}" controls></audio>
       </li>
       <li>
         <strong>Checkbox: </strong>
@@ -58,6 +58,14 @@
       <li>
         <strong>Slug: </strong>
         {{ item.slug }}
+      </li>
+      <li>
+        <strong>Type de voix: </strong>
+        {# Relationship. Note that use the label you set for the relation, not the content-type name. #}
+        {% for relation in item.type_de_voix %}
+          {# You can ouput more than just the name. Feel free to output more fields from the CMS. #}
+          <a href="{{ url(relation) }}">{{ relation.name }}</a>{% if not loop.last %},{% endif %}
+        {% endfor %}
       </li>
   </ul>
 {% endblock %}
