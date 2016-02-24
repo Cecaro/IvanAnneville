@@ -4,8 +4,6 @@
 
 {% set name = 'Acceuil' %}
 {% set content = merge(cms.videos, cms.audio) %}
-{% set videos = cms.videos %}
-{% set audios = cms.audio %}
 
 {% block content %}
 
@@ -26,13 +24,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="col-xs-12 col-md-8">
+        <div id="featured-media-carousel" class="carousel slide" data-ride="carousel">
             <!-- Carousel indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#featured-media-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#featured-media-carousel" data-slide-to="1"></li>
+                <li data-target="#featured-media-carousel" data-slide-to="2"></li>
             </ol>
             <!-- Wrapper for carousel items -->
             <div class="carousel-inner">
@@ -51,12 +49,24 @@
               {%endfor%}
             </div>
             <!-- Carousel controls -->
-            <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <a class="carousel-control left" href="#featured-media-carousel" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
-            <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <a class="carousel-control right" href="#featured-media-carousel" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
             </a>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="social-side">
+            <h3 class="header social">
+              Activités récentes
+            </h3>
+            <ul>
+              <li>Numero uno</li>
+              <li>Number two</li>
+              <li>Numéro trois</li>
+            </ul>
           </div>
         </div>
       </div>
