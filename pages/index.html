@@ -25,7 +25,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-md-8">
-        <div id="featured-media-carousel" class="carousel slide" data-ride="carousel">
+        <div id="featured-media-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
             <!-- Carousel indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#featured-media-carousel" data-slide-to="0" class="active"></li>
@@ -37,13 +37,13 @@
               {% for item in content %}
                 {% if item.checkbox && loop.first %}
                 <div class="item active">
-                  <video class="video-js" controls preload="auto" src= {{ item.media.url }}></video>
-                  <a href="{{item.media.url}}" download="{{item.media.url}}"> Download this! </a>
+                  <video class="video-js center" controls preload="auto" src= {{ item.media.url }}></video>
+                  <a class="center video-link" href="{{item.media.url}}" download="{{item.media.url}}"> Télécharger! </a>
                 </div>
                 {% else %}
                 <div class="item">
-                  <video class="video-js" controls preload="auto" src= {{ item.media.url }}></video>
-                  <a href="{{item.media.url}}" download="{{item.media.url}}"> Download this! </a>
+                  <video class="video-js center" controls preload="auto" src= {{ item.media.url }}></video>
+                  <a class="center video-link" href="{{item.media.url}}" download="{{item.media.url}}"> Télécharger! </a>
                 </div>
                 {%endif%}
               {%endfor%}

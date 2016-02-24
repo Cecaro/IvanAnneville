@@ -16,18 +16,10 @@ and add an if statment to the html from the javascript doing that.-->
 
   <h1>{{ cms.content.name }}</h1>
   <ul>
-      {% for item in videos %}
-        <video class="video-js" width="200" height="300" controls preload="auto"
-        poster="/static/images/logo.jpg">
-          <source src="{{item.other_file.url}}" />
-        </video>
-      {% endfor %}
-  </ul>
-  <ul>
-    {% for item in audio %}
-      <div class="audio-container">
-        <video class="video-js" poster="/static/images/logo.jpg" controls preload="auto" src= {{ item.audio_file.url }}></video>
-        <p class="audio-types-voix">
+    {% for item in content %}
+      <div class="media-container">
+        <video class="video-js" poster="/static/images/logo.jpg" controls preload="auto" src= {{ item.media.url }}></video>
+        <p class="media-types-voix">
           {% for voix in item.type_de_voix %}
             {{voix.name}}
           {% endfor %}

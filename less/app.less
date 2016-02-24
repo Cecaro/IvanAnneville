@@ -2,10 +2,10 @@
 
 @import "bootstrap/bootstrap.less";
 
-#full{
-  background: url("/static/images/background.png") no-repeat center center fixed;
-  background-size: cover;
-}
+// #full{
+//   background: url("/static/images/background.png") no-repeat center center fixed;
+//   background-size: cover;
+// }
 
 // Navigation styles
 .navbar {
@@ -52,5 +52,72 @@
   margin-top: 12px;
 }
 
+.center{
+  display: block;
+  margin: 0 auto;
+}
 
+.video-link{
+  width: 100px;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#featured-media-carousel{
+  display: flex;
+  align-items: center;
+  height: 300px;
+  margin-top: 20px;
+}
 // Content styles
+
+
+// Qui suis je styles
+.phototeque{
+  line-height: 0;
+
+  -webkit-column-count: 5;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    5;
+  -moz-column-gap:      0px;
+  column-count:         5;
+  column-gap:           0px;
+}
+
+.phototeque img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media only screen and (max-width: 1200px) {
+  .phototeque {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .phototeque {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .phototeque {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .phototeque {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
