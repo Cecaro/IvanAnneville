@@ -6288,6 +6288,9 @@ button.close {
 .navbar {
   border-bottom: 1px solid black;
 }
+#colored {
+  background-color: black;
+}
 .logo-div {
   position: relative;
   height: 75px;
@@ -6378,4 +6381,10 @@ button.close {
     -webkit-column-count: 1;
     column-count: 1;
   }
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
 }

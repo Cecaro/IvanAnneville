@@ -10,22 +10,31 @@
 
 {% block content %}
 
-<!-- What I can do to apply the filters from links to this page is to
-have the javascript look at which button was used to link to the page
-and add an if statment to the html from the javascript doing that.-->
-
   <h1>{{ cms.content.name }}</h1>
-  <ul>
+  {% if current_url.endswith('video') %}
+    {% for item in videos %}
+      {% block media_content %}{% endblock %}
+    {% endfor %}
+  {% elseif current_url.endswith('audio') %}
+    {% for item in audio %}
+      {% block media_content %}{% endblock %}
+    {% endfor %}
+  {% else %}
     {% for item in content %}
-      <div class="media-container">
-        <video class="video-js" poster="/static/images/logo.jpg" controls preload="auto" src= {{ item.media.url }}></video>
-        <p class="media-types-voix">
-          {% for voix in item.type_de_voix %}
-            {{voix.name}}
+      {% block media_content %}{% endblock %}
+    {% endfor %}
+  {% endif %}
+
+{% block media_content %}
+      <div class="content-videos">
+        <video class="video-js" poster={{ item.img_poster.url }} controls preload="auto" src={{ item.media.url }}></video>
+        <ul class="voice-types">
+          {% for voice in item.type_de_voix %}
+            <li class="content-voice">{{ voice.name }}</li>
           {% endfor %}
-        </p>
+        </ul>
       </div>
-    {%endfor%}
-  </ul>
+{% endblock %}
+
 
 {% endblock %}
