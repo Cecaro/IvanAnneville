@@ -1,30 +1,31 @@
 <div class="navbar navbar-static-top">
 	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-items">
-				<span class="icon-bar" id="colored"></span>
-				<span class="icon-bar" id="colored"></span>
-				<span class="icon-bar" id="colored"></span>
-			</button>
-		</div>
-		<div class="collapse navbar-collapse" id="navbar-items">
+		<div class="navbar-center" id="navbar-items">
 			<ul class="nav navbar-nav navbar-center">
-				<li>
+				<li class="nav-item hidden">
 					<a href="/" class="">Acceuil</a>
 				</li>
-				<li>
+				<li class="nav-item hidden">
 					<a href="/quisuisje/" class="">Qui Suis-je</a>
 				</li>
-				<li>
-					<a href="/content#video" class="">A regarder</a>
+				<li class="nav-item hidden">
+					<a href="/typesdevoix/" class="">Types de voix</a>
 				</li>
-				<li>
-					<a href="/content#audio" class="">A ecouter</a>
+				<li id="logo-expander">
+					<a href="#" class="no-bckgr">
+						<img class="header-logo" src="/static/images/header_logo.png"/>
+					</a>
 				</li>
-				<li>
+				<li class="nav-item hidden">
+					<a href="/videos/" class="">A regarder</a>
+				</li>
+				<li class="nav-item hidden">
+					<a href="/audio/" class="">A ecouter</a>
+				</li>
+				<li class="nav-item hidden">
 					<a href="/contactezmoi/" class="">Contactez moi</a>
 				</li>
 			</ul>
-		</div><!-- /.navbar-collapse -->
-	</div><!-- /.container-fluid -->
+		</div><!-- /.navbar-hidden -->
+	</div><!-- /.container -->
 </div><!-- /.navbar-default -->

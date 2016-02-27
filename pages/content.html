@@ -11,8 +11,12 @@
 {% block content %}
 
   <h1>{{ cms.content.name }}</h1>
-  {% if current_url.endswith('video') %}
+  {{ current_url }}
+  {% if current_url.endswith('#video') %}
     {% for item in videos %}
+      <p>
+        {{item.name}}
+      </p>
       {% block media_content %}{% endblock %}
     {% endfor %}
   {% elseif current_url.endswith('audio') %}
@@ -27,7 +31,7 @@
 
 {% block media_content %}
       <div class="content-videos">
-        <video class="video-js" poster={{ item.img_poster.url }} controls preload="auto" src={{ item.media.url }}></video>
+        <video class="video-js" poster="{{ item.img_poster.url}}" controls preload="auto" src={{ item.media.url }}></video>
         <ul class="voice-types">
           {% for voice in item.type_de_voix %}
             <li class="content-voice">{{ voice.name }}</li>

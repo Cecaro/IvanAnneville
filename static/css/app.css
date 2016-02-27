@@ -6285,11 +6285,30 @@ button.close {
     display: none !important;
   }
 }
-.navbar {
-  border-bottom: 1px solid black;
+#full {
+  background: url("/static/images/test_background.png") no-repeat center center fixed;
+  background-size: cover;
 }
-#colored {
-  background-color: black;
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+.animate_expander {
+  animation: expanderAnimation 4s linear 1 running;
+  -webkit-animation: expanderAnimation 4s linear 1 running;
+  -o-animation: expanderAnimation 4s linear 1 running;
+  -moz-animation: expanderAnimation 4s linear 1 running;
+}
+.header-logo {
+  height: 60px;
+  width: 80px;
+}
+.nav > li > a.no-bckgr:hover,
+.nav > li > a.no-bckgr:focus {
+  background-color: transparent;
 }
 .logo-div {
   position: relative;
@@ -6312,13 +6331,84 @@ button.close {
   background-color: grey;
 }
 .navbar-center {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@keyframes expanderAnimation {
+  0% {
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out;
+  }
+  33% {
+    transform: translate(-270px, 0px);
+    animation-timing-function: ease-in-out;
+  }
+  66% {
+    transform: translate(270px, 0px);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    animation-timing-function: ease-in-out;
+  }
+}
+@-webkit-keyframes expanderAnimation {
+  0% {
+    transform: translate(0px, 0px);
+    -webkit-animation-timing-function: ease-in-out;
+  }
+  33% {
+    transform: translate(-270px, 0px);
+    -webkit-animation-timing-function: ease-in-out;
+  }
+  66% {
+    transform: translate(270px, 0px);
+    -webkit-animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    -webkit-animation-timing-function: ease-in-out;
+  }
+}
+@-moz-keyframes expanderAnimation {
+  0% {
+    transform: translate(0px, 0px);
+    -moz-animation-timing-function: ease-in-out;
+  }
+  33% {
+    transform: translate(-270px, 0px);
+    -moz-animation-timing-function: ease-in-out;
+  }
+  66% {
+    transform: translate(270px, 0px);
+    -moz-animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    -moz-animation-timing-function: ease-in-out;
+  }
+}
+@-o-keyframes expanderAnimation {
+  0% {
+    transform: translate(0px, 0px);
+    -o-animation-timing-function: ease-in-out;
+  }
+  33% {
+    transform: translate(-270px, 0px);
+    -o-animation-timing-function: ease-in-out;
+  }
+  66% {
+    transform: translate(270px, 0px);
+    -o-animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: translate(0px, 0px);
+    -o-animation-timing-function: ease-in-out;
+  }
 }
 .centerIntroText {
   text-align: center;
-}
-.introduction {
-  background: url("/static/images/background_acceuil.png") repeat-x fixed center;
 }
 #navbar-items {
   margin-top: 12px;
@@ -6340,6 +6430,20 @@ button.close {
   align-items: center;
   height: 300px;
   margin-top: 20px;
+}
+.carousel-control.right,
+.carousel-control.left {
+  background: transparent;
+}
+.glyphicon-chevron-right,
+.glyphicon-chevron-left {
+  color: transparent;
+}
+.carousel-indicators li {
+  border-color: black;
+}
+.carousel-indicators .active {
+  background-color: #E67777 ;
 }
 .phototeque {
   line-height: 0;
@@ -6387,4 +6491,8 @@ button.close {
   bottom: 0;
   width: 100%;
   height: 60px;
+}
+.social-logo {
+  width: 50px;
+  height: 50px;
 }
