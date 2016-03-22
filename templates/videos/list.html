@@ -8,17 +8,19 @@
 
 
   <div class="row">
-    <h2>Mes spots audio</h2>
-    {% for item in videos %}
-    <div class="content-audio">
-      <video class="video-js" poster="{{ item.img_poster.url}}" controls preload="auto" src={{ item.media.url }}></video>
-      <ul class="voice-types">
-        {% for voice in item.type_de_voix %}
-          <li class="content-voice">{{ voice.name }}</li>
-        {% endfor %}
-      </ul>
+    <h2>Mes spots vidéos</h2>
+    <div class="col-md-10">
+      {% for item in videos %}
+      <div class="content-audio">
+        <video class="video-js" poster="{{ item.img_poster.url}}" controls preload="auto" src={{ item.media.url }}></video>
+        <ul class="voice-types">
+          {% for voice in item.type_de_voix %}
+            <li class="content-voice">{{ voice.name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 
 
