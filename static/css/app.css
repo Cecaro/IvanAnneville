@@ -6345,7 +6345,7 @@ body {
 .nav-item > a {
   color: white;
 }
-.nav-item > a :hover {
+.nav-item > a:hover {
   color: grey;
 }
 .centerIntroText {
