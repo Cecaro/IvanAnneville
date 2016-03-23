@@ -8,7 +8,7 @@
 {% block content %}
 
   <div class="row">
-  <div class="col-xs-12 col-md-8">
+  <div class="col-md-12">
     <div id="featured-media-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
         <!-- Carousel indicators -->
         <!-- put a loop here to add slide to for all items which are to be feature on the front page-->
@@ -22,7 +22,7 @@
           {% for item in content %}
             {% if item.checkbox && loop.first %}
             <div class="item active">
-              <video class="video-js center" height=300px width=400px controls preload="auto" src= {{ item.media.url }}></video>
+              <video class="video-js center" height=450px width=600px controls preload="auto" src= {{ item.media.url }}></video>
               <a class="center video-link" href="{{item.media.url}}" download="{{item.media.url}}"> Télécharger! </a>
             </div>
             {% else %}
@@ -42,9 +42,11 @@
         </a>
       </div>
     </div>
-    <div class="col-xs-12 col-md-4">
-      <div class="social-side">
-        <h3 class="header social">
+  </div>
+  <div class="row center-parent">
+    <div class="col-md-6">
+      <div class="recent-activities">
+        <h3 class="header-recent">
           Activités récentes
         </h3>
         <ul>

@@ -6308,34 +6308,28 @@ body {
   align-items: center;
   justify-content: center;
 }
+.main-header-container {
+  font-family: 'Amatic SC', cursive;
+}
+.header-text {
+  margin-top: 10px;
+  font-size: 82px;
+}
 .main-logo {
   height: 150px;
   width: 150px;
 }
-.animate_expander {
-  animation: expanderAnimation 4s linear 1 running;
-  -webkit-animation: expanderAnimation 4s linear 1 running;
-  -o-animation: expanderAnimation 4s linear 1 running;
-  -moz-animation: expanderAnimation 4s linear 1 running;
+.social {
+  height: 25%;
+  margin: 0;
+}
+.site-header {
+  height: 75%;
+  margin: 0;
 }
 .header-logo {
   height: 50px;
   width: 50px;
-}
-.nav > li > a.no-bckgr:hover,
-.nav > li > a.no-bckgr:focus {
-  background-color: transparent;
-}
-.logo-div {
-  position: relative;
-  height: 75px;
-  top: 5px;
-}
-.logo-image {
-  height: 200px;
-  width: 133px;
-  float: left;
-  position: absolute;
 }
 .logo-text {
   font-size: 30px;
@@ -6343,85 +6337,16 @@ body {
   float: left;
   padding-left: 20px;
 }
-.nav-dropdown:hover {
-  background-color: grey;
-}
 .navbar-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-@keyframes expanderAnimation {
-  0% {
-    transform: translate(0px, 0px);
-    animation-timing-function: ease-in-out;
-  }
-  33% {
-    transform: translate(-270px, 0px);
-    animation-timing-function: ease-in-out;
-  }
-  66% {
-    transform: translate(270px, 0px);
-    animation-timing-function: ease-in-out;
-  }
-  100% {
-    transform: translate(0px, 0px);
-    animation-timing-function: ease-in-out;
-  }
+.nav-item > a {
+  color: white;
 }
-@-webkit-keyframes expanderAnimation {
-  0% {
-    transform: translate(0px, 0px);
-    -webkit-animation-timing-function: ease-in-out;
-  }
-  33% {
-    transform: translate(-270px, 0px);
-    -webkit-animation-timing-function: ease-in-out;
-  }
-  66% {
-    transform: translate(270px, 0px);
-    -webkit-animation-timing-function: ease-in-out;
-  }
-  100% {
-    transform: translate(0px, 0px);
-    -webkit-animation-timing-function: ease-in-out;
-  }
-}
-@-moz-keyframes expanderAnimation {
-  0% {
-    transform: translate(0px, 0px);
-    -moz-animation-timing-function: ease-in-out;
-  }
-  33% {
-    transform: translate(-270px, 0px);
-    -moz-animation-timing-function: ease-in-out;
-  }
-  66% {
-    transform: translate(270px, 0px);
-    -moz-animation-timing-function: ease-in-out;
-  }
-  100% {
-    transform: translate(0px, 0px);
-    -moz-animation-timing-function: ease-in-out;
-  }
-}
-@-o-keyframes expanderAnimation {
-  0% {
-    transform: translate(0px, 0px);
-    -o-animation-timing-function: ease-in-out;
-  }
-  33% {
-    transform: translate(-270px, 0px);
-    -o-animation-timing-function: ease-in-out;
-  }
-  66% {
-    transform: translate(270px, 0px);
-    -o-animation-timing-function: ease-in-out;
-  }
-  100% {
-    transform: translate(0px, 0px);
-    -o-animation-timing-function: ease-in-out;
-  }
+.nav-item > a :hover {
+  color: grey;
 }
 .centerIntroText {
   text-align: center;
@@ -6438,8 +6363,18 @@ body {
   display: block;
   margin: 0 auto;
 }
+.center-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .video-link {
   width: 100px;
+  color: black;
+  background-color: white;
+}
+.video-link :hover {
+  color: grey;
 }
 .item {
   display: flex;
@@ -6454,17 +6389,20 @@ body {
 }
 .carousel-control.right,
 .carousel-control.left {
-  background: transparent;
+  background: none;
 }
 .glyphicon-chevron-right,
 .glyphicon-chevron-left {
-  color: transparent;
+  color: white;
 }
 .carousel-indicators li {
   border-color: black;
 }
 .carousel-indicators .active {
-  background-color: #E67777 ;
+  background-color: white ;
+}
+.recent-activities {
+  color: white;
 }
 .phototeque {
   line-height: 0;
