@@ -23,7 +23,7 @@
             {% if item.checkbox && loop.first %}
             <div class="item active">
               <video class="video-js vjs-default-skin center" width="440px" height="267px"
-              controls preload="none" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+              controls preload="none" data-setup='{ "aspectRatio":"1980:720", "playbackRates": [1, 1.5, 2] }'>
                 <source src="{{item.media.url}}" type='video/mp4' />
                 <source src="{{item.media.url}}" type='video/webm' />
               </video>
@@ -51,6 +51,9 @@
       </div>
     </div>
   </div>
+  <!-- Have two headers under the video, once which says featured videos, the other which says recent videos.
+      When clicking one or the other, a different carousel loads, and the chair with Ivan's name on it changes position
+      From under one title to the other-->
   <div class="row center-parent">
     <div class="col-md-6 center-parent">
       <div class="recent-activities">

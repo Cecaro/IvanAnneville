@@ -6338,6 +6338,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+.no-margin {
+  margin: 0;
+}
 .social-logo {
   width: 24px;
   height: 24px;
@@ -6355,11 +6358,14 @@ body {
 }
 .header-text {
   margin-top: 10px;
-  font-size: 82px;
+  font-size: 78px;
   color: black;
 }
 .header-text:hover {
   color: darkgray;
+}
+.header-img {
+  height: 78px;
 }
 .main-logo {
   height: 150px;
@@ -6398,7 +6404,7 @@ body {
   text-align: center;
 }
 .intro-banner {
-  height: 175px;
+  height: 185px;
   width: 100%;
   background-color: white;
 }
