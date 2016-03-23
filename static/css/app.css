@@ -6401,7 +6401,8 @@ body {
 .carousel-indicators .active {
   background-color: white ;
 }
-.recent-activities {
+.recent-activities,
+.footer-text {
   color: white;
 }
 .phototeque {
