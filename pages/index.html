@@ -22,12 +22,20 @@
           {% for item in content %}
             {% if item.checkbox && loop.first %}
             <div class="item active">
-              <video class="video-js center" height=450px width=600px controls preload="auto" src= {{ item.media.url }}></video>
+              <video class="video-js vjs-default-skin center" width="440px" height="267px"
+              controls preload="none" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+                <source src="{{item.media.url}}" type='video/mp4' />
+                <source src="{{item.media.url}}" type='video/webm' />
+              </video>
               <a class="center video-link" href="{{item.media.url}}" download="{{item.media.url}}"> Télécharger! </a>
             </div>
             {% else %}
             <div class="item">
-              <video class="video-js center" controls preload="auto" src= {{ item.media.url }}></video>
+              <video class="video-js vjs-default-skin center" width="640px" height="267px"
+              controls preload="none" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+                <source src="{{item.media.url}}" type='video/mp4' />
+                <source src="{{item.media.url}}" type='video/webm' />
+              </video>
               <a class="center video-link" href="{{item.media.url}}" download="{{item.media.url}}"> Télécharger! </a>
             </div>
             {%endif%}

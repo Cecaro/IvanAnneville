@@ -1,6 +1,7 @@
 // This is your main LESS file. It imports the source boostrap files.
 
 @import "bootstrap/bootstrap.less";
+@import "videojs.less";
 
 #full{
   background: url("/static/images/Def_Background.png") no-repeat center center fixed;
@@ -37,6 +38,10 @@ body{
 .header-text{
   margin-top: 10px;
   font-size: 82px;
+  color: black;
+  &:hover{
+    color: darkgray;
+  }
 }
 
 .main-logo{
@@ -123,7 +128,6 @@ body{
 #featured-media-carousel{
   display: flex;
   align-items: center;
-  height: 300px;
   margin-top: 20px;
 }
 

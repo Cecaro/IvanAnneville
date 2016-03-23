@@ -6285,6 +6285,48 @@ button.close {
     display: none !important;
   }
 }
+.video-js {
+  font-size: 10px;
+  color: #ffffff;
+}
+.video-js.vjs-fluid {
+  width: 70%;
+}
+.vjs-default-skin .vjs-big-play-button {
+  font-size: 3em;
+  line-height: 1.5em;
+  height: 1.5em;
+  width: 3em;
+  border: 0.06666em solid #ffffff;
+  border-radius: 0.3em;
+  left: 0.5em;
+  top: 0.5em;
+}
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  background-color: #2b333f;
+}
+/* Slider - used for Volume bar and Progress bar */
+.video-js .vjs-slider {
+  background-color: #73859f;
+}
+/* The slider bar color is used for the progress bar and the volume bar
+   (the first two can be removed after a fix that's coming) */
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+  background: #ffffff;
+}
+/* The main progress bar also has a bar that shows how much has been loaded. */
+.video-js .vjs-load-progress {
+  /* Otherwise we'll rely on stacked opacities */
+  background: #73859f;
+}
+.video-js .vjs-load-progress div {
+  /* Otherwise we'll rely on stacked opacities */
+  background: #73859f, 0.75;
+}
 #full {
   background: url("/static/images/Def_Background.png") no-repeat center center fixed;
   background-size: cover;
@@ -6314,6 +6356,10 @@ body {
 .header-text {
   margin-top: 10px;
   font-size: 82px;
+  color: black;
+}
+.header-text:hover {
+  color: darkgray;
 }
 .main-logo {
   height: 150px;
@@ -6384,7 +6430,6 @@ body {
 #featured-media-carousel {
   display: flex;
   align-items: center;
-  height: 300px;
   margin-top: 20px;
 }
 .carousel-control.right,
