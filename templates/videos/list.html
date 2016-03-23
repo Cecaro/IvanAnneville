@@ -4,9 +4,10 @@
 
 {% block content %}
 
-  {% set videos = cms.videos %}
+{% set videos = cms.videos %}
+{% set voice_types = cms.typesdevoix %}
 
-
+<!--Have a for loop through the types de voix to create a row containing a carousel for each of them-->
   <div class="row">
     <h2>Mes spots vidéos</h2>
     <div class="col-md-10">
