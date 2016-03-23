@@ -6361,9 +6361,6 @@ body {
   font-size: 78px;
   color: black;
 }
-.header-text:hover {
-  color: darkgray;
-}
 .header-img {
   height: 78px;
 }
@@ -6374,6 +6371,9 @@ body {
 .social {
   height: 25%;
   margin: 0;
+}
+.logo-container:hover {
+  color: darkgray;
 }
 .site-header {
   height: 75%;
