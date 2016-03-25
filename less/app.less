@@ -3,6 +3,8 @@
 @import "bootstrap/bootstrap.less";
 @import "videojs.less";
 
+@color-primary: lightsalmon;
+
 #full{
   background: url("/static/images/Def_Background.png") no-repeat center center fixed;
   background-size: cover;
@@ -21,6 +23,21 @@ body{
   margin: 0;
 }
 
+.centered{
+  display: flex;
+  justify-content: center;
+}
+
+a.btn-info{
+  width: 130px;
+  margin-top: 20px;
+  background-color: @color-primary;
+  border-color: @color-primary;
+  &:hover{
+    background-color: darken(@color-primary, 5%);
+    border-color: darken(@color-primary, 5%)
+  }
+}
 //header banner styles
 .social-logo{
   width: 24px;
@@ -59,12 +76,6 @@ body{
   margin: 0;
 }
 
-.logo-container{
-  &:hover{
-    color: darkgray;
-  }
-}
-
 .site-header{
   height: 75%;
   margin: 0;
@@ -88,12 +99,26 @@ body{
   justify-content: center;
 }
 
-.nav-item > a {
+.navbar-static-top{
+  background-color: @color-primary;
+  border-width: 0;
+}
+
+.nav .nav-item > a {
   color: white;
 
   &:hover{
-    color: grey;
+    background-color: darken(@color-primary, 7%);
   }
+}
+
+.icon-bar{
+  background-color: black;
+}
+
+.navbar-toggle{
+  margin-right: 25px;
+  margin-top: 12px;
 }
 
 //Page d'acceuil styles
@@ -115,25 +140,11 @@ body{
   display: block;
   margin: 0 auto;
 }
+
 .center-parent{
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.video-link{
-  width: 100px;
-  color: black;
-  background-color: white;
-  :hover{
-    color: grey;
-  }
-}
-
-.item{
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #featured-media-carousel{
@@ -144,18 +155,27 @@ body{
 
 .carousel-control.right, .carousel-control.left{
   background: none;
+  width: 5%;
+}
+
+.carousel-control.right{
+  right: 8%;
+}
+
+.carousel-control.left{
+  left: 8%;
 }
 
 .glyphicon-chevron-right, .glyphicon-chevron-left{
-  color: white;
+  color: @color-primary;
 }
 
 .carousel-indicators{
   li{
-    border-color: black;
+    border-color: white;
   }
    .active{
-    background-color: white ;
+    background-color: @color-primary ;
   }
 }
 

@@ -11,16 +11,14 @@
   <div class="row">
     <h2>Mes spots vidéos</h2>
     <div class="col-md-10">
-      {% for item in videos %}
       <div class="content-audio">
-        <video class="video-js" poster="{{ item.img_poster.url}}" controls preload="auto" src={{ item.media.url }}></video>
-        <ul class="voice-types">
-          {% for voice in item.type_de_voix %}
-            <li class="content-voice">{{ voice.name }}</li>
+        {% for item in voice_types %}
+          {% set loop.index = getItem('videos', '{{item._id}}') %}
+          {% for tag in loop.index.tags %}
+            <video class="video-js {{tag.name}}" poster="{{ item.img_poster.url}}" controls preload="auto" src={{ item.media.url }}></video>
           {% endfor %}
-        </ul>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
 

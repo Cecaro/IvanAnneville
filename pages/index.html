@@ -21,22 +21,22 @@
         <div class="carousel-inner">
           {% for item in content %}
             {% if item.checkbox && loop.first %}
-            <div class="item active">
+            <div class="item centered active">
               <video class="video-js vjs-default-skin center" width="440px" height="267px"
               controls preload="none" data-setup='{ "aspectRatio":"1980:720", "playbackRates": [1, 1.5, 2] }'>
                 <source src="{{item.media.url}}" type='video/mp4' />
                 <source src="{{item.media.url}}" type='video/webm' />
               </video>
-              <a class="center video-link" href="{{item.media.url}}" download="{{item.media.url}}"> Télécharger! </a>
+              <a href="{{item.media.url}}" download="{{item.media.url}}" class="btn btn-info center"><span class="glyphicon glyphicon-download-alt"></span> Télécharger</a>
             </div>
             {% else %}
-            <div class="item">
-              <video class="video-js vjs-default-skin center" width="640px" height="267px"
-              controls preload="none" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+            <div class="item centered">
+              <video class="video-js vjs-default-skin center" width="440px" height="267px"
+              controls preload="none" data-setup='{ "aspectRatio":"1980:720", "playbackRates": [1, 1.5, 2] }'>
                 <source src="{{item.media.url}}" type='video/mp4' />
                 <source src="{{item.media.url}}" type='video/webm' />
               </video>
-              <a class="center video-link" href="{{item.media.url}}" download="{{item.media.url}}"> Télécharger! </a>
+              <a href="{{item.media.url}}" download="{{item.media.url}}" class="btn btn-info center"><span class="glyphicon glyphicon-download-alt"></span> Télécharger</a>
             </div>
             {%endif%}
           {%endfor%}
@@ -61,9 +61,10 @@
           Activités récentes
         </h3>
         <ul>
-          <li>Numero uno</li>
-          <li>Number two</li>
-          <li>Numéro trois</li>
+            {% for item in cms.typesdevoix %}
+            <li><h5>{{item.name}}</h5><p>{{item._id}}</p></li>
+            {% endfor %}
+
         </ul>
       </div>
     </div>
