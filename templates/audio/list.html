@@ -8,17 +8,23 @@
   {% set voice_types = cms.typesdevoix %}
 
 <div class="row">
-  <h2>Mes spots audio</h2>
-  {% for item in audio %}
-  <div class="content-audio">
-    <video class="video-js" poster="{{ item.img_poster.url}}" controls preload="auto" src={{ item.media.url }}></video>
-    <ul class="voice-types">
-      {% for voice in item.type_de_voix %}
-        <li class="content-voice">{{ voice.name }}</li>
-      {% endfor %}
-    </ul>
+  <div class="col-md-12 centered">
+    <h1 class="site-color">Mes spots audio</h1>
   </div>
-  {% endfor %}
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {% for item in audio %}
+    <div class="content-audio">
+      <video class="video-js" poster="{{ item.img_poster.url}}" controls preload="auto" src={{ item.media.url }}></video>
+      <ul class="voice-types">
+        {% for voice in item.type_de_voix %}
+          <li class="content-voice">{{ voice.name }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}

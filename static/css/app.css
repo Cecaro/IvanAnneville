@@ -6337,6 +6337,8 @@ html {
 }
 body {
   margin-bottom: 60px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
 }
 .no-margin {
   margin: 0;
@@ -6355,6 +6357,12 @@ a.btn-info:hover {
   background-color: #ff8e61;
   border-color: #ff8e61;
 }
+.black {
+  color: black;
+}
+.site-color {
+  color: #ffa07a;
+}
 .social-logo {
   width: 24px;
   height: 24px;
@@ -6369,6 +6377,9 @@ a.btn-info:hover {
 }
 .main-header-container {
   font-family: 'Amatic SC', cursive;
+}
+.main-header-container:hover {
+  text-decoration: none;
 }
 .header-text {
   margin-top: 10px;
@@ -6410,6 +6421,8 @@ a.btn-info:hover {
   border-width: 0;
 }
 .nav .nav-item > a {
+  font-weight: 600;
+  font-size: 16px;
   color: white;
 }
 .nav .nav-item > a:hover {
@@ -6469,8 +6482,13 @@ a.btn-info:hover {
   background-color: #ffa07a;
 }
 .recent-activities,
-.footer-text {
+.footer-text,
+.footer-text > a {
   color: white;
+}
+.footer-text > a:hover {
+  color: white;
+  text-decoration: none;
 }
 .phototeque {
   line-height: 0;
@@ -6512,6 +6530,9 @@ a.btn-info:hover {
     -webkit-column-count: 1;
     column-count: 1;
   }
+}
+#success_message {
+  display: none;
 }
 #footer {
   position: absolute;

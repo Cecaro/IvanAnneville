@@ -5,22 +5,48 @@
 {% block content %}
 
 {% set videos = cms.videos %}
-{% set voice_types = cms.typesdevoix %}
+{% set types = cms.typesdevoix %}
 
 <!--Have a for loop through the types de voix to create a row containing a carousel for each of them-->
-  <div class="row">
-    <h2>Mes spots vidéos</h2>
-    <div class="col-md-10">
-      <div class="content-audio">
-        {% for item in voice_types %}
-          {% set loop.index = getItem('videos', '{{item._id}}') %}
-          {% for tag in loop.index.tags %}
-            <video class="video-js {{tag.name}}" poster="{{ item.img_poster.url}}" controls preload="auto" src={{ item.media.url }}></video>
-          {% endfor %}
-        {% endfor %}
+<div class="row">
+  <div class="col-md-12 centered">
+    <h1 class="site-color">Mes spots vidéos</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {% for type in types %}
+      <div class="btn btn-info center" id="{{type.name}}">
+        <a href="#" onclick="toggle_visibility('{{type.name}}');">{{type.name}}</a>
       </div>
+    {% endfor %}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="content-audio">
+      {% for video in videos %}
+        <h2></h2>
+        <video id="{{video.name}}" class="video-js
+        {% for tag in video.type_de_voix %}
+          {{tag.name}}
+        {% endfor %}" poster="{{ video.img_poster.url}}" controls preload="auto" src={{ video.media.url }}></video>
+      {% endfor %}
     </div>
   </div>
+</div>
 
+<script>
+function toggle_visibility(id) {
+  if($('.'+id).hasClass("hidden")){
+    $('span[id^="' + id + '"]').remove();
+    $('.'+id).removeClass("hidden");
+  }
+  else {
+    $('#'+id).append('<span class="glyphicon glyphicon-remove" id="'+ id + '"></span>');
+    $('.'+id).addClass("hidden");
+  }
+}
+</script>
 
 {% endblock %}
