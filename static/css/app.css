@@ -6349,7 +6349,6 @@ body {
 }
 a.btn-info {
   width: 130px;
-  margin-top: 20px;
   background-color: #ffa07a;
   border-color: #ffa07a;
 }
@@ -6357,11 +6356,19 @@ a.btn-info:hover {
   background-color: #ff8e61;
   border-color: #ff8e61;
 }
+a.btn-info:active,
+a.btn-info:focus {
+  background-color: #ffa07a;
+  border-color: #ffa07a;
+}
 .black {
   color: black;
 }
 .site-color {
   color: #ffa07a;
+}
+a.top-margin {
+  margin-top: 20px;
 }
 .social-logo {
   width: 24px;
@@ -6490,6 +6497,9 @@ a.btn-info:hover {
   color: white;
   text-decoration: none;
 }
+.content-filter {
+  height: 30px;
+}
 .phototeque {
   line-height: 0;
   -webkit-column-count: 5;
@@ -6538,5 +6548,5 @@ a.btn-info:hover {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 35px;
 }

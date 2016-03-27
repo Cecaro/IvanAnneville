@@ -7,6 +7,11 @@
 {% set videos = cms.videos %}
 {% set types = cms.typesdevoix %}
 
+{% set size = videos|size %}
+{% set part = size%4 %}
+{% set fullrow = size-part %}
+{% set count = 0 %}
+
 <!--Have a for loop through the types de voix to create a row containing a carousel for each of them-->
 <div class="row">
   <div class="col-md-12 centered">
@@ -14,36 +19,67 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
-    {% for type in types %}
-      <div class="btn btn-info center" id="{{type.name}}">
-        <a href="#" onclick="toggle_visibility('{{type.name}}');">{{type.name}}</a>
-      </div>
-    {% endfor %}
+  <div class="col-md-12 centered">
+    <h3>Type de voix</h3>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
-    <div class="content-audio">
-      {% for video in videos %}
-        <h2></h2>
-        <video id="{{video.name}}" class="video-js
-        {% for tag in video.type_de_voix %}
-          {{tag.name}}
-        {% endfor %}" poster="{{ video.img_poster.url}}" controls preload="auto" src={{ video.media.url }}></video>
-      {% endfor %}
-    </div>
+  <div class="col-md-12 centered">
+    {% for type in types %}
+      <a href="#" class="btn btn-info centered content-filter" id="{{type.name}}" onclick="toggle_visibility('{{type.name}}');">
+        <p>{{type.name}}</p>
+      </a>
+    {% endfor %}
   </div>
 </div>
+{% for video in videos %}
+    {% if count == 3 %}
+      {% set count = 0 %}
+    {% endif %}
+
+    {% if count == 0 %}
+        <div class="row">
+    {%endif%}
+
+    {% if (loop.index) > fullrow %}
+        {% if part == 1%}
+            <div class="col-md-4 col-md-push-4">
+        {% elseif part == 2 %}
+            <div class="col-md-4 col-md-push-2">
+        {% endif %}
+    {% elseif (loop.index) <= fullrow %}
+            <div class="col-md-4">
+    {% endif %}
+
+                {% set count = count + 1 %}
+                <div class="content-audio">
+                  <video id="{{video.name}}" class="video-js vjs-default-skin
+                  {% for tag in video.type_de_voix %}
+                    {{tag.name}}
+                  {% endfor %}" width="360px" height="200px"
+                  controls preload="none" data-setup='{ "aspectRatio":"360:200", "playbackRates": [1, 1.5, 2] }'>
+                    <source src="{{video.media.url}}" type='video/mp4' />
+                    <source src="{{video.media.url}}" type='video/webm' />
+                  </video>
+                </div>
+                <a href="{{video.media.url}}" download="{{video.media.url}}" class="btn btn-info center top-margin"><span class="glyphicon glyphicon-download-alt"></span> Télécharger</a>
+            </div>
+        {% if count == 3 || loop.last %}
+        <!-- Close the row once it has been populated with 3 columns or it is the last element of the loop -->
+            </div>
+        {% endif %}
+   {% endfor %}
 
 <script>
 function toggle_visibility(id) {
-  if($('.'+id).hasClass("hidden")){
+  if($('#'+id).hasClass("clicked")){
     $('span[id^="' + id + '"]').remove();
+    $('#'+id).removeClass("clicked");
     $('.'+id).removeClass("hidden");
   }
   else {
     $('#'+id).append('<span class="glyphicon glyphicon-remove" id="'+ id + '"></span>');
+    $('#'+id).addClass("clicked");
     $('.'+id).addClass("hidden");
   }
 }

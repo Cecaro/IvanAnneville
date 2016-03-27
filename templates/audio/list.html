@@ -4,27 +4,60 @@
 
 {% block content %}
 
-  {% set audio = cms.audio %}
-  {% set voice_types = cms.typesdevoix %}
+{% set audio = cms.audio %}
+{% set types = cms.typesdevoix %}
 
+{% set size = brands|size %}
+{% set part = size%4 %}
+{% set fullrow = size-part %}
+{% set count = 0 %}
+
+<!--Have a for loop through the types de voix to create a row containing a carousel for each of them-->
 <div class="row">
   <div class="col-md-12 centered">
     <h1 class="site-color">Mes spots audio</h1>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
-    {% for item in audio %}
-    <div class="content-audio">
-      <video class="video-js" poster="{{ item.img_poster.url}}" controls preload="auto" src={{ item.media.url }}></video>
-      <ul class="voice-types">
-        {% for voice in item.type_de_voix %}
-          <li class="content-voice">{{ voice.name }}</li>
-        {% endfor %}
-      </ul>
-    </div>
+  <div class="col-md-12 centered">
+    <h3>Type de voix</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 centered">
+    {% for type in types %}
+      <a href="#" class="btn btn-info centered content-filter" id="{{type.name}}" onclick="toggle_visibility('{{type.name}}');">
+        <p>{{type.name}}</p>
+      </a>
     {% endfor %}
   </div>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="content-audio">
+      {% for audio in audio %}
+        <video id="{{audio.name}}" class="video-js
+        {% for tag in audio.type_de_voix %}
+          {{tag.name}}
+        {% endfor %}" poster="{{ audio.img_poster.url}}" controls preload="auto" src={{ audio.media.url }}></video>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script>
+function toggle_visibility(id) {
+  if($('#'+id).hasClass("clicked")){
+    $('span[id^="' + id + '"]').remove();
+    $('#'+id).removeClass("clicked");
+    $('.'+id).removeClass("hidden");
+  }
+  else {
+    $('#'+id).append('<span class="glyphicon glyphicon-remove" id="'+ id + '"></span>');
+    $('#'+id).addClass("clicked");
+    $('.'+id).addClass("hidden");
+  }
+}
+</script>
 
 {% endblock %}
