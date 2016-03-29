@@ -6368,7 +6368,7 @@ a.top-margin {
   margin-top: 20px;
 }
 .intro-banner {
-  height: 220px;
+  height: 240px;
   width: 100%;
   background-color: white;
 }
@@ -6390,6 +6390,9 @@ a.top-margin {
 .main-header-container:hover {
   text-decoration: none;
 }
+.main-header-container h4 {
+  font-size: 21px;
+}
 .header-text {
   margin-top: 10px;
   font-size: 78px;
@@ -6403,11 +6406,11 @@ a.top-margin {
   width: 150px;
 }
 .social {
-  height: 25%;
+  height: 15%;
   margin: 0;
 }
 .site-header {
-  height: 75%;
+  height: 80%;
   margin: 0;
 }
 .main-header-container > h3 {
