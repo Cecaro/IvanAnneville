@@ -9,15 +9,14 @@
 
   <div class="row">
   <div class="col-md-12">
-    <div id="featured-media-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-        <!-- Carousel indicators -->
-        <!-- put a loop here to add slide to for all items which are to be feature on the front page-->
+    <!-- <div id="featured-media-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+
         <ol class="carousel-indicators">
             <li data-target="#featured-media-carousel" data-slide-to="0" class="active"></li>
             <li data-target="#featured-media-carousel" data-slide-to="1"></li>
             <li data-target="#featured-media-carousel" data-slide-to="2"></li>
         </ol>
-        <!-- Wrapper for carousel items -->
+
         <div class="carousel-inner">
           {% for item in content %}
             {% if item.checkbox && loop.first %}
@@ -41,18 +40,15 @@
             {%endif%}
           {%endfor%}
         </div>
-        <!-- Carousel controls -->
+
         <a class="carousel-control left" href="#featured-media-carousel" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
         <a class="carousel-control right" href="#featured-media-carousel" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
-      </div>
+      </div>  -->
     </div>
   </div>
-  <!-- Have two headers under the video, once which says featured videos, the other which says recent videos.
-      When clicking one or the other, a different carousel loads, and the chair with Ivan's name on it changes position
-      From under one title to the other-->
 
 {% endblock %}
