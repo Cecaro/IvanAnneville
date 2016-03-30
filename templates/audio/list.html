@@ -43,12 +43,21 @@
 
     {% if (loop.index) > fullrow %}
         {% if part == 1%}
-            <div class="col-md-4 col-md-push-4">
+            <div class="col-md-4 col-md-push-4
+            {% for tag in item.type_de_voix %}
+              {{tag.name}}
+            {% endfor %}">
         {% elseif part == 2 %}
-            <div class="col-md-4 col-md-push-2">
+            <div class="col-md-4 col-md-push-2
+            {% for tag in item.type_de_voix %}
+              {{tag.name}}
+            {% endfor %}">
         {% endif %}
     {% elseif (loop.index) <= fullrow %}
-            <div class="col-md-4">
+            <div class="col-md-4
+            {% for tag in item.type_de_voix %}
+              {{tag.name}}
+            {% endfor %}">
     {% endif %}
 
                 {% set count = count + 1 %}
@@ -56,15 +65,15 @@
                   <h3>{{item.name}}</h3>
                 </div>
                 <div class="content-audio">
-                  <video id="{{item.name}}" class="video-js vjs-default-skin
-                  {% for tag in item.type_de_voix %}
-                    {{tag.name}}
-                  {% endfor %}" width="360px" height="200px"
+                  <video id="{{item.name}}" class="video-js vjs-default-skin" width="360px" height="200px"
                   controls preload="none" data-setup='{ "aspectRatio":"360:200", "playbackRates": [1, 1.5, 2] }'>
                     <source src="{{item.media.url}}" type='video/mp4' />
                     <source src="{{item.media.url}}" type='video/webm' />
                   </video>
                 </div>
+                {% for tag in item.type_de_voix %}
+                  <p class="btn btn-info centerIntroText" id="{{tag.name}}">{{tag.name}}</p>
+                {% endfor %}
                 <a href="{{item.media.url}}" download="{{item.media.url}}" class="btn btn-info center top-margin"><span class="glyphicon glyphicon-download-alt"></span> Télécharger</a>
             </div>
         {% if count == 3 || loop.last %}
@@ -75,6 +84,9 @@
 
 <script>
 function toggle_visibility(id) {
+  //loop through all the content filters to see if one is clicked. If one is, we filter the videos to only the ones which have that tag
+  //otherwise we display all the videos.
+  //So if one is clicked, first we give all the videos the hidden class, then remove it from the ones with the tag
   if($('#'+id).hasClass("clicked")){
     $('span[id^="' + id + '"]').remove();
     $('#'+id).removeClass("clicked");
