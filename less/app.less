@@ -34,13 +34,9 @@ a.btn-info{
   width: 130px;
   background-color: @color-primary;
   border-color: @color-primary;
-  &:hover{
-    background-color: darken(@color-primary, 5%);
-    border-color: darken(@color-primary, 5%);
-  }
-  &:active, &:focus{
-    background-color: @color-primary;
-    border-color: @color-primary;
+  &:active, &:focus, &:hover{
+    background-color: darken(@color-primary, 7%);
+    border-color: darken(@color-primary, 7%);
   }
 }
 
@@ -148,10 +144,7 @@ a.top-margin{
   font-size: 16px;
   color: white;
 
-  &:hover{
-    background-color: darken(@color-primary, 7%);
-  }
-  &:active{
+  &:hover, &:active{
     background-color: darken(@color-primary, 7%);
   }
 }
@@ -199,8 +192,27 @@ a.top-margin{
   margin: 4px;
 }
 
+.filter-btn{
+  display: inline-block;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  margin: 5px 0;
+  &:active, &:focus, &:hover{
+    color: white;
+    border: none;
+    text-decoration: none;
+  }
+}
+
+.filter-head{
+  background-color: @color-primary;
+  border: 1px solid @color-primary;
+  border-radius: 4px;
+}
+
 .content-background{
-  background-color: rgba(255, 160, 122, 0.7);
+  background-color: rgba(255, 255, 255, 0.8);
   margin: 5px 0;
 }
 
@@ -293,6 +305,16 @@ a.top-margin{
 
 //Contact me styles
 #success_message{ display: none;}
+
+.btn-warning{
+  background-color: @color-primary;
+  &:hover{
+    background-color: darken(@color-primary, 7%);
+  }
+  &:active{
+    background-color: darken(@color-primary, 7%);
+  }
+}
 
 //Footer styles
 #footer{

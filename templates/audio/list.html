@@ -18,12 +18,12 @@
     <h1 class="site-color">Mes spots audio</h1>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-12 centered">
-    <h3>Type de voix</h3>
+<div class="row centered">
+  <div class="col-md-2 centered filter-head">
+    <a href="#" class="filter-btn" onclick="showFilters();">Types de Voix<span class="glyphicon glyphicon-chevron-right"></span></a>
   </div>
 </div>
-<div class="row">
+<div class="row filters hidden">
   {% for type in types %}
   <div class="col-md-2 col-sm-3 col-xs-4 centered">
     <a href="#" class="btn btn-info centered content-filter" id="{{type.name}}" onclick="toggle_visibility('{{type.name}}');">
@@ -61,7 +61,7 @@
     {% endif %}
 
                 {% set count = count + 1 %}
-                <div class="content-name centered">
+                <div class="content-name centered site-color">
                   <h3>{{item.name}}</h3>
                 </div>
                 <div class="content-audio centered">
@@ -83,23 +83,5 @@
             </div>
         {% endif %}
    {% endfor %}
-
-<script>
-function toggle_visibility(id) {
-  //loop through all the content filters to see if one is clicked. If one is, we filter the videos to only the ones which have that tag
-  //otherwise we display all the videos.
-  //So if one is clicked, first we give all the videos the hidden class, then remove it from the ones with the tag
-  if($('a#'+id).hasClass("clicked")){
-    $('span[id^="' + id + '"]').remove();
-    $('a#'+id).removeClass("clicked");
-    $('.'+id).removeClass("fade-out");
-  }
-  else {
-    $('a#'+id).append('<span class="glyphicon glyphicon-remove" id="'+ id + '"></span>');
-    $('a#'+id).addClass("clicked");
-    $('.'+id).addClass("fade-out");
-  }
-}
-</script>
 
 {% endblock %}
