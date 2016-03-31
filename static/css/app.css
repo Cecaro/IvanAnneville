@@ -6506,6 +6506,7 @@ a.top-margin {
   background-color: #ffa07a;
   border: 1px solid #ffa07a;
   border-radius: 4px;
+  margin-bottom: 10px;
 }
 .content-background {
   background-color: rgba(255, 255, 255, 0.8);

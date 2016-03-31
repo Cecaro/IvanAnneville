@@ -3,52 +3,34 @@
 {% block title %}{% parent %} - Acceuil{% endblock %}
 
 {% set name = 'Acceuil' %}
-{% set content = merge(cms.videos, cms.audio) %}
 
 {% block content %}
 
-  <div class="row">
-  <div class="col-md-12">
-    <!-- <div id="featured-media-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-
-        <ol class="carousel-indicators">
-            <li data-target="#featured-media-carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#featured-media-carousel" data-slide-to="1"></li>
-            <li data-target="#featured-media-carousel" data-slide-to="2"></li>
-        </ol>
-
-        <div class="carousel-inner">
-          {% for item in content %}
-            {% if item.checkbox && loop.first %}
-            <div class="item centered active">
-              <video class="video-js vjs-default-skin center" width="440px" height="267px"
-              controls preload="none" data-setup='{ "aspectRatio":"1980:720", "playbackRates": [1, 1.5, 2] }'>
-                <source src="{{item.media.url}}" type='video/mp4' />
-                <source src="{{item.media.url}}" type='video/webm' />
-              </video>
-              <a href="{{item.media.url}}" download="{{item.media.url}}" class="btn btn-info center top-margin"><span class="glyphicon glyphicon-download-alt"></span> Télécharger</a>
-            </div>
-            {% else %}
-            <div class="item centered">
-              <video class="video-js vjs-default-skin center" width="440px" height="267px"
-              controls preload="none" data-setup='{ "aspectRatio":"1980:720", "playbackRates": [1, 1.5, 2] }'>
-                <source src="{{item.media.url}}" type='video/mp4' />
-                <source src="{{item.media.url}}" type='video/webm' />
-              </video>
-              <a href="{{item.media.url}}" download="{{item.media.url}}" class="btn btn-info center top-margin"><span class="glyphicon glyphicon-download-alt"></span> Télécharger</a>
-            </div>
-            {%endif%}
-          {%endfor%}
-        </div>
-
-        <a class="carousel-control left" href="#featured-media-carousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="carousel-control right" href="#featured-media-carousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-      </div>  -->
+<div class="row">
+  <div class="col-xs-6">
+    <img src="/static/images/chair.png"  />
+  </div>
+  <div class="col-xs-6">
+    <div id="tv_container">
+      <video width="320" height="240">
+          <source src="video/video.mp4" type="video/mp4" />
+      </video>
     </div>
   </div>
+</div>
 
+<style>
+
+#tv_container {
+    background: url('/static/images/tv.png') no-repeat top left transparent;
+    width: 220px; /* Adjust TV image width */
+    height: 165px; /* Adjust TV image height */
+    position: relative;
+}
+#tv_container video {
+    position: absolute;
+    top: 30px; /* Adjust top position */
+    left: 40px; /* Adjust left position */
+}
+</style>
 {% endblock %}
