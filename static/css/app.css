@@ -6337,7 +6337,9 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   color: white;
 }
-.no-margin {
+.no-margin,
+.intro-banner > .row,
+.site-header > .row {
   margin: 0;
 }
 .centered {
@@ -6393,7 +6395,7 @@ a.top-margin {
   text-decoration: none;
 }
 .main-header-container h4 {
-  font-size: 21px;
+  font-size: 28px;
 }
 .header-text {
   margin-top: 10px;
@@ -6480,6 +6482,12 @@ a.top-margin {
   height: 30px;
   margin: 4px;
 }
+.content-name {
+  background-color: #ffa07a;
+  border: 1px solid #ffa07a;
+  border-top: 4px;
+  margin-bottom: 12px;
+}
 .filter-btn {
   display: inline-block;
   cursor: pointer;
@@ -6501,6 +6509,8 @@ a.top-margin {
 }
 .content-background {
   background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
   margin: 5px 0;
 }
 #Grave {
