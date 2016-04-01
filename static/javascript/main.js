@@ -1,9 +1,9 @@
-function toggle_visibility(id) {
-  //loop through all the content filters to see if one is clicked. If one is, we filter the videos to only the ones which have that tag
+function toggle_visibility(id, e) {
+  //loop through all the content filters to see if one is clicked. If one is, we filter the videos to only show the ones which have that tag
   //otherwise we display all the videos.
   //So if one is clicked, first we give all the videos the hidden class, then remove it from the ones with the tag
 
-  $('#'+id).preventDefault();
+  e.preventDefault();
   if($('a#'+id).hasClass("clicked")){
     $('span[id^="' + id + '"]').remove();
     $('a#'+id).removeClass("clicked");

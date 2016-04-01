@@ -6482,6 +6482,10 @@ a.top-margin {
   height: 30px;
   margin: 4px;
 }
+.fade-out {
+  opacity: 0.4;
+  pointer-events: none;
+}
 .content-name {
   background-color: #ffa07a;
   border: 1px solid #ffa07a;
