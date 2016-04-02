@@ -2,31 +2,34 @@
 
 {% set name = 'Qui suis-je' %}
 {% set composit = cms.composit %}
-{% set photos = cms.photos %}
+{% set photos = cms.photos|sort('name') %}
 
 {% block title %}{% parent %} - {{ cms.quisuisje.name }}{% endblock %}
 {% block content %}
 <div class="row center-parent">
   <div class="col-md-12 centered page-header">
-    <h1 class="site-color">Qui suis-je</h1>
+    <h1 class="site-color page-title">Qui suis-je</h1>
   </div>
 </div>
 <div class="row">
-  <div class="col-md-12">
-    <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <div class="col-md-12 color-background">
+    <p class="description centerIntroText">Je suis Ivan Anneville, voix-off professionnelle, à la voix singulière, grave et chaude.<br />
+Après avoir dirigé les meilleurs comédiens voix-off durant des années en séances de pubs TV, RADIO ou CINEMA en tant que responsable Marketing pour des Majors comme GAUMONT COLUMBIA ou SONY PICTURES, je mets aujourd’hui à votre disposition toute mon expérience de professionnel, qui de plus me permet aujourd’hui de comprendre très vite la demande du client et de savoir instantanément quelle est la cible visée et le ton à utiliser.
+<br />Croyez-moi, vous êtes sur la bonne voix !</p>
   </div>
 </div>
-<div class="row phototeque">
-  <div class="col-md-10">
-    {% for photo in photos %}
-      <div class="item">
-        <img class="meImg" src="{{photo.image|imageSize('auto','auto')}}"/>
-      </div>
-    {% endfor %}
+
+<div class="row">
+  <div class="col-md-12">
+    <section class="phototeque">
+      {% for photo in photos %}
+        <img class="meImg img-responsive" src="{{photo.image|imageSize('auto','auto')}}"/>
+      {% endfor %}
+    </section>
   </div>
 </div>
 
 <div class="composit-download">
-  <a href={{composit.other_file.url}} download="{{composit.other_file.url}}"> Télécharger mon composit.</a>
+  <a href="{{composit.other_file.url}}" download="{{composit.other_file.url}}" class="btn btn-info center top-margin"><span class="glyphicon glyphicon-download-alt"></span> Télécharger mon composit.</a>
 </div>
 {% endblock %}

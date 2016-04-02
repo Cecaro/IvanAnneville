@@ -48,6 +48,13 @@ a.btn-info{
   color: @color-primary;
 }
 
+.color-background{
+  background-color: @color-primary;
+  border: 1px solid @color-primary;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
 a.top-margin{
   margin-top: 20px;
 }
@@ -56,6 +63,27 @@ a.top-margin{
   background-color: white;
   border: 1px solid white;
   border-radius: 6px;
+}
+
+.description{
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.composit-download > a.btn-info{
+  width: 200px;
+}
+
+.page-title{
+  line-height: 15px;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.inline-flex{
+  display: inline-flex;
 }
 //header banner styles
 .intro-banner{
@@ -137,11 +165,11 @@ a.top-margin{
 .navbar-static-top{
   background-color: @color-primary;
   border-width: 0;
+  margin-bottom: 0;
 }
 
 .nav .nav-item > a {
-  font-weight: 600;
-  font-size: 16px;
+  font-size: 20px;
   color: white;
 
   &:hover, &:active{
@@ -170,6 +198,24 @@ a.top-margin{
 .center{
   display: block;
   margin: 0 auto;
+}
+
+.tv{
+  margin-top: 90px;
+  z-index: -1;
+}
+
+.video-homepage{
+  border: 14px solid;
+  border-image: url("/static/images/border-tv.png") 4%;
+  width: 650px;
+  height: 350px;
+}
+
+.acceuil-video{
+  text-align: center;
+  width: 622px;
+  height: 322px;
 }
 
 .center-parent{
@@ -231,6 +277,39 @@ a.top-margin{
   margin: 5px 0;
 }
 
+.tagTitle{
+  font-size: 25px;
+}
+
+.taglist{
+  font-size: 15px;
+    &:hover{
+      cursor: default;
+    }
+}
+
+.content-audio{
+  background-color: @color-primary;
+  border: 1px solid @color-primary;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.audio-content{
+  height: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.audio-item{
+  width: 400px;
+}
+
+.section-head{
+  font-size: 35px;
+  line-height: 10px;
+}
+
 #Grave{
   background-color: red;
   border-color: red;
@@ -276,12 +355,12 @@ a.top-margin{
 .phototeque{
   line-height: 0;
 
-  -webkit-column-count: 5;
-  -webkit-column-gap:   0px;
-  -moz-column-count:    5;
-  -moz-column-gap:      0px;
-  column-count:         5;
-  column-gap:           0px;
+  -webkit-column-count: 4;
+  -webkit-column-gap:   40px;
+  -moz-column-count:    4;
+  -moz-column-gap:      40px;
+  column-count:         4;
+  column-gap:           40px;
 }
 
 .phototeque img {
@@ -329,6 +408,10 @@ a.top-margin{
   &:active{
     background-color: darken(@color-primary, 7%);
   }
+}
+
+#contact_form{
+  margin-top: 40px;
 }
 
 //Footer styles
