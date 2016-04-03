@@ -3,7 +3,7 @@
 {% block title %}{% parent %} - Acceuil{% endblock %}
 
 {% set name = 'Acceuil' %}
-{% set samsung = getItem('audio', '-KA2P6yk_SapjrXB3t1s')%}
+{% set video = getItem('videos', '-KEMuJw3T4TXGz47_ivi')%}
 {% block content %}
 
 <div class="row">
@@ -12,10 +12,10 @@
   </div>
   <div class="col-xs-6 col-xs-pull-2 tv">
     <div class="video-homepage img-responsive">
-      <video class="video-js acceuil-video img-responsive">
-          <source src="{{samsung.media.url}}" type="video/webm">
-          <source src="{{samsung.media.url}}" type="video/mp4">
-          <source src="{{samsung.media.url}}" type="video/ogg">
+      <video class="video-js vjs-default-skin vjs-big-play-button acceuil-video img-responsive" poster="/static/images/bg.jpg">
+          <source src="{{video.media.url}}" type="video/webm">
+          <source src="{{video.media.url}}" type="video/mp4">
+          <source src="{{video.media.url}}" type="video/ogg">
       </video>
     </div>
   </div>
