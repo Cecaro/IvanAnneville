@@ -85,6 +85,10 @@ a.top-margin{
 .inline-flex{
   display: inline-flex;
 }
+
+.first-page-element{
+  margin-top : 40px;
+}
 //header banner styles
 .intro-banner{
   height: 240px;
@@ -141,27 +145,17 @@ a.top-margin{
 }
 
 .main-header-container > h3 {
-  font-size: 50px;
+  font-size: 45px;
 }
+
+@media (min-width: @screen-md-min) {
+  .main-header-container > h3 {
+    font-size: 50px;
+  }
+}
+
+
 // Navigation styles
-.header-logo{
-  height: 50px;
-  width: 50px
-}
-
-.logo-text {
-  font-size: 30px;
-  color: red;
-  float: left;
-  padding-left: 20px;
-}
-
-.navbar-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .navbar-static-top{
   background-color: @color-primary;
   border-width: 0;
@@ -184,6 +178,27 @@ a.top-margin{
 .navbar-toggle{
   margin-right: 25px;
   margin-top: 12px;
+}
+
+.navbar-brand{
+  display: block;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-brand{
+      display: none;
+    }
 }
 
 //Page d'acceuil styles
@@ -427,12 +442,9 @@ a.top-margin{
   }
 }
 
-#contact_form{
-  margin-top: 40px;
-}
-
-legend{
-  width: 50%;
+.form-control{
+  height: 45px;
+  font-size: 18px;
 }
 
 //Footer styles

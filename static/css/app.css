@@ -6393,6 +6393,9 @@ a.top-margin {
 .inline-flex {
   display: inline-flex;
 }
+.first-page-element {
+  margin-top: 40px;
+}
 .intro-banner {
   height: 240px;
   width: 100%;
@@ -6440,22 +6443,12 @@ a.top-margin {
   margin: 0;
 }
 .main-header-container > h3 {
-  font-size: 50px;
+  font-size: 45px;
 }
-.header-logo {
-  height: 50px;
-  width: 50px;
-}
-.logo-text {
-  font-size: 30px;
-  color: red;
-  float: left;
-  padding-left: 20px;
-}
-.navbar-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (min-width: 992px) {
+  .main-header-container > h3 {
+    font-size: 50px;
+  }
 }
 .navbar-static-top {
   background-color: #ffa07a;
@@ -6476,6 +6469,23 @@ a.top-margin {
 .navbar-toggle {
   margin-right: 25px;
   margin-top: 12px;
+}
+.navbar-brand {
+  display: block;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+  }
+  .navbar .navbar-collapse {
+    text-align: center;
+  }
+  .navbar-brand {
+    display: none;
+  }
 }
 .centerIntroText {
   text-align: center;
@@ -6691,11 +6701,9 @@ a.top-margin {
 .btn-warning:active {
   background-color: #ff8656;
 }
-#contact_form {
-  margin-top: 40px;
-}
-legend {
-  width: 50%;
+.form-control {
+  height: 45px;
+  font-size: 18px;
 }
 #footer {
   position: absolute;
