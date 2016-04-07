@@ -13,7 +13,7 @@
 {% set fullrow = size-part %}
 {% set count = 0 %}
 
-<div class="first-page-element">
+<div class="first-page-element"></div>
 {% for category in categories %}
   {% if category.audio_relationship|size > 0%}
     <div class="row centered" id="{{category.name}}">
@@ -51,6 +51,5 @@
     </div>
   {% endif %}
 {% endfor %}
-</div>
 
 {% endblock %}

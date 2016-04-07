@@ -1,8 +1,35 @@
+$(document).ready(function() {
+    // this will get the full URL at the address bar
+    var url = (window.location.pathname);
+    switch(url) {
+    case "/audio/":
+        url = "A écouter";
+        break;
+    case "/videos/":
+        url = "A regarder";
+        break;
+    case "/quisuisje/":
+        url = "Qui suis-je";
+        break;
+    case "/contactezmoi/":
+        url = "Contactez-moi";
+        break;
+    default:
+        url = "Accueil";
+}
+    // passes on every "a" tag
+    $(".nav-item a").each(function() {
+      var $anchorText = $(this).html();
+            // checks if its the same on the address bar
+        if(url == ($anchorText)) {
+            $(this).addClass("active");
+        }
+    });
+});
+
 function toggle_visibility(id, e) {
   e.preventDefault();
-//first loop: through the filters, make array of all that are clicked
-//hide all the videos
-//second loop: through the videos, remove the fade out class when one of their class is in the array
+
 var toBeFiltered = [];
   if($('a#'+id).hasClass("clicked")){
     $('span[id^="' + id + '"]').remove();
@@ -29,11 +56,12 @@ var toBeFiltered = [];
       }
       else {
         $(this).removeClass("fade-out");
+        break;
       }
     }
   });
 
-  if(toBeFiltered.length = 0){
+  if(toBeFiltered.length == 0){
     $('.content-item').each(function(i, obj){
       $(this).removeClass("fade-out");
     });

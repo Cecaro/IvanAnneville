@@ -6453,8 +6453,11 @@ a.top-margin {
   color: white;
   font-size: 18px;
 }
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:active {
+.navbar-default .navbar-nav > li > a:hover {
+  background-color: #ff8656;
+  color: white;
+}
+a.active {
   background-color: #ff8656;
   color: white;
 }
