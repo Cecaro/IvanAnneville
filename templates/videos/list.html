@@ -13,7 +13,7 @@
 
 <div class="row centered first-page-element">
   <div class="col-md-2 centered filter-head">
-    <a href="#" class="filter-btn" onclick="showFilters();">Types de Voix<span class="glyphicon glyphicon-chevron-right"></span></a>
+    <a href="#" class="filter-btn">Types de Voix<span class="glyphicon glyphicon-chevron-right"></span></a>
   </div>
 </div>
 <div class="row filters hidden">
@@ -36,18 +36,18 @@
 
     {% if (loop.index) > fullrow %}
         {% if part == 1%}
-            <div class="col-md-4 col-md-push-4
+            <div class="content-item col-md-4 col-md-push-4
             {% for tag in item.type_de_voix %}
               {{tag.name}}
             {% endfor %}">
         {% elseif part == 2 %}
-            <div class="col-md-4 col-md-push-2
+            <div class="content-item col-md-4 col-md-push-2
             {% for tag in item.type_de_voix %}
               {{tag.name}}
             {% endfor %}">
         {% endif %}
     {% elseif (loop.index) <= fullrow %}
-            <div class="col-md-4
+            <div class="content-item col-md-4
             {% for tag in item.type_de_voix %}
               {{tag.name}}
             {% endfor %}">

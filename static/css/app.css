@@ -6445,26 +6445,18 @@ a.top-margin {
 .main-header-container > h3 {
   font-size: 45px;
 }
-@media (min-width: 992px) {
-  .main-header-container > h3 {
-    font-size: 50px;
-  }
-}
 .navbar-static-top {
   background-color: #ffa07a;
-  border-width: 0;
-  margin-bottom: 0;
+  border: none;
 }
-.nav .nav-item > a {
-  font-size: 18px;
+.navbar-default .navbar-nav > li > a {
   color: white;
+  font-size: 18px;
 }
-.nav .nav-item > a:hover,
-.nav .nav-item > a:active {
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:active {
   background-color: #ff8656;
-}
-.icon-bar {
-  background-color: black;
+  color: white;
 }
 .navbar-toggle {
   margin-right: 25px;
@@ -6501,16 +6493,15 @@ a.top-margin {
   margin-top: 90px;
   z-index: -1;
 }
-.video-homepage {
+.acceuil-content-container {
   border: 14px solid;
   border-image: url("/static/images/border-tv.png") 4%;
   width: 650px;
   height: 350px;
+  background-color: black;
 }
-.acceuil-video {
-  text-align: center;
-  width: 622px;
-  height: 322px;
+.acceuil-image {
+  height: 100%;
 }
 .center-parent {
   display: flex;

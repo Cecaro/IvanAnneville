@@ -148,31 +148,23 @@ a.top-margin{
   font-size: 45px;
 }
 
-@media (min-width: @screen-md-min) {
-  .main-header-container > h3 {
-    font-size: 50px;
-  }
+@media (min-width: @screen-lg-min) {
 }
 
 
 // Navigation styles
 .navbar-static-top{
   background-color: @color-primary;
-  border-width: 0;
-  margin-bottom: 0;
+  border: none;
 }
 
-.nav .nav-item > a {
-  font-size: 18px;
+.navbar-default .navbar-nav > li > a{
   color: white;
-
+  font-size: 18px;
   &:hover, &:active{
     background-color: darken(@color-primary, 7%);
+    color: white;
   }
-}
-
-.icon-bar{
-  background-color: black;
 }
 
 .navbar-toggle{
@@ -220,17 +212,16 @@ a.top-margin{
   z-index: -1;
 }
 
-.video-homepage{
+.acceuil-content-container{
   border: 14px solid;
   border-image: url("/static/images/border-tv.png") 4%;
   width: 650px;
   height: 350px;
+  background-color: black;
 }
 
-.acceuil-video{
-  text-align: center;
-  width: 622px;
-  height: 322px;
+.acceuil-image{
+  height: 100%;
 }
 
 .center-parent{
