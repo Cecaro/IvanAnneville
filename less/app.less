@@ -156,6 +156,16 @@ a.top-margin{
 .navbar-static-top{
   background-color: @color-primary;
   border: none;
+  margin-bottom: 0;
+}
+
+.navbar-default .navbar-toggle{
+  .icon-bar{
+    background-color: white;
+  }
+  &:hover, &:focus{
+    background-color: transparent;
+  }
 }
 
 .navbar-default .navbar-nav > li > a{
@@ -163,6 +173,14 @@ a.top-margin{
   font-size: 18px;
   &:hover {
     background-color: darken(@color-primary, 7%);
+    color: white;
+  }
+}
+
+.navbar-default p.navbar-brand{
+  color: white;
+  font-size: 18px;
+  &:hover{
     color: white;
   }
 }
@@ -221,12 +239,14 @@ a.active{
   border: 14px solid;
   border-image: url("/static/images/border-tv.png") 4%;
   width: 650px;
-  height: 350px;
+  max-height: 350px;
   background-color: black;
 }
 
 .acceuil-image{
-  height: 100%;
+  max-height: 100%;
+  max-width: 40%;
+  margin: 0 auto;
 }
 
 .center-parent{
@@ -310,10 +330,6 @@ a.active{
   height: 30px;
   margin-top: 10px;
   margin-right: 10px;
-}
-
-.audio-item{
-  width: 400px;
 }
 
 .section-head{

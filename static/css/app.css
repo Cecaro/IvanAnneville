@@ -6448,6 +6448,14 @@ a.top-margin {
 .navbar-static-top {
   background-color: #ffa07a;
   border: none;
+  margin-bottom: 0;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
 }
 .navbar-default .navbar-nav > li > a {
   color: white;
@@ -6455,6 +6463,13 @@ a.top-margin {
 }
 .navbar-default .navbar-nav > li > a:hover {
   background-color: #ff8656;
+  color: white;
+}
+.navbar-default p.navbar-brand {
+  color: white;
+  font-size: 18px;
+}
+.navbar-default p.navbar-brand:hover {
   color: white;
 }
 a.active {
@@ -6500,11 +6515,13 @@ a.active {
   border: 14px solid;
   border-image: url("/static/images/border-tv.png") 4%;
   width: 650px;
-  height: 350px;
+  max-height: 350px;
   background-color: black;
 }
 .acceuil-image {
-  height: 100%;
+  max-height: 100%;
+  max-width: 40%;
+  margin: 0 auto;
 }
 .center-parent {
   display: flex;
@@ -6578,9 +6595,6 @@ a.active {
   height: 30px;
   margin-top: 10px;
   margin-right: 10px;
-}
-.audio-item {
-  width: 400px;
 }
 .section-head {
   font-size: 32px;

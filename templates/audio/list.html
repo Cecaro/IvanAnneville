@@ -13,7 +13,24 @@
 {% set fullrow = size-part %}
 {% set count = 0 %}
 
-<div class="first-page-element"></div>
+<div class="row centered first-page-element">
+  <div class="col-md-2 centered filter-head">
+    <a href="#" class="filter-btn">Types de Voix<span class="glyphicon glyphicon-chevron-right"></span></a>
+  </div>
+</div>
+<div class="row filters hidden">
+  <div class="col-md-10 col-md-push-1">
+    <div class="row">
+      {% for type in types %}
+      <div class="col-md-2 col-sm-3 col-xs-4 centered">
+        <a href="#" class="btn btn-info centered content-filter" id="{{type.name}}" onclick="toggle_visibility('{{type.name}}', event);">
+          <p>{{type.name}}</p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% for category in categories %}
   {% if category.audio_relationship|size > 0%}
     <div class="row centered" id="{{category.name}}">
@@ -24,7 +41,9 @@
           </div>
         </div>
         {% for item in category.audio_relationship %}
-          <div class="row content-audio">
+          <div class="row content-audio content-item {% for tag in item.type_de_voix %}
+            {{tag.name}}
+          {% endfor %}">
             <div class="col-md-3 centered">
               <div class="inline-block">
                 <h4 class="tagTitle audio-content" id="{{item.name}}-title" {% if item.long_name %}style="font-size: 18px;"{%endif%}>{{item.name}}</h4>
@@ -38,7 +57,7 @@
               </div>
             </div>
             <div class="col-md-4 centered">
-              <audio class="audio-item audio-content" id="{{item.name}}" controls preload="none">
+              <audio class="audio-content" id="{{item.name}}" controls preload="none">
                 <source src="{{item.media.url}}" type='audio/mp3' />
               </audio>
             </div>
