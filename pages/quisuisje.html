@@ -8,7 +8,7 @@
 {% block content %}
 
 <div class="row first-page-element">
-  <div class="col-md-12 color-background">
+  <div class="col-md-10 col-md-push-1 color-background">
     <p class="description centerIntroText">Je suis Ivan Anneville, voix-off professionnelle, à la voix singulière, grave et chaude.<br />
 Après avoir dirigé les meilleurs comédiens voix-off durant des années en séances de pubs TV, RADIO ou CINEMA en tant que responsable Marketing pour des Majors comme GAUMONT COLUMBIA ou SONY PICTURES, je mets à votre disposition toute mon expérience de professionnel, qui de plus me permet aujourd’hui de comprendre très vite la demande du client et de savoir instantanément quelle est la cible visée et le ton à utiliser.
 <br />Croyez-moi, vous êtes sur la bonne voix !</p>
@@ -16,12 +16,18 @@ Après avoir dirigé les meilleurs comédiens voix-off durant des années en sé
 </div>
 
 <div class="row">
-  <div class="col-md-12">
-    <section class="phototeque">
-      {% for photo in photos %}
+  <div class="col-md-8 col-md-push-2">
+    {% for photo in photos %}
+      {% if loop.first || loop.index == 4 %}
+        <div class="row picture-row">
+      {% endif %}
+      <div class="col-md-4">
         <img class="meImg img-responsive" src="{{photo.image|imageSize('auto','auto')}}"/>
-      {% endfor %}
-    </section>
+      </div>
+      {% if loop.index == 3 || loop.last %}
+        </div>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 

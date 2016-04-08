@@ -6360,6 +6360,9 @@ a.btn-info:hover {
 .black {
   color: black;
 }
+p.transparent {
+  color: transparent;
+}
 .site-color {
   color: #ffa07a;
 }
@@ -6380,6 +6383,7 @@ a.top-margin {
 .description {
   font-size: 17px;
   line-height: 22px;
+  padding: 12px;
 }
 .composit-download > a.btn-info {
   width: 220px;
@@ -6580,6 +6584,7 @@ a.active {
   font-size: 25px;
 }
 .taglist {
+  width: 100px;
   font-size: 15px;
 }
 .taglist:hover {
@@ -6656,46 +6661,8 @@ a.active {
   background-color: #ff6600;
   border-color: #ff6600;
 }
-.phototeque {
-  line-height: 0;
-  -webkit-column-count: 4;
-  -webkit-column-gap: 40px;
-  -moz-column-count: 4;
-  -moz-column-gap: 40px;
-  column-count: 4;
-  column-gap: 40px;
-}
-.phototeque img {
-  width: 100% !important;
-  height: auto !important;
-}
-@media only screen and (max-width: 1200px) {
-  .phototeque {
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .phototeque {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
-  }
-}
-@media only screen and (max-width: 800px) {
-  .phototeque {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .phototeque {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1;
-  }
+.picture-row {
+  margin-bottom: 20px;
 }
 #success_message {
   display: none;
@@ -6708,6 +6675,9 @@ a.active {
 }
 .btn-warning:active {
   background-color: #ff8656;
+}
+legend {
+  width: 60%;
 }
 .form-control {
   height: 45px;

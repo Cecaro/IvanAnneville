@@ -41,7 +41,7 @@
           </div>
         </div>
         {% for item in category.audio_relationship %}
-          <div class="row content-audio content-item {% for tag in item.type_de_voix %}
+          <div class="row content-item content-audio {% for tag in item.type_de_voix %}
             {{tag.name}}
           {% endfor %}">
             <div class="col-md-3 centered">
@@ -49,20 +49,28 @@
                 <h4 class="tagTitle audio-content" id="{{item.name}}-title" {% if item.long_name %}style="font-size: 18px;"{%endif%}>{{item.name}}</h4>
               </div>
             </div>
-            <div class="col-md-3 centered">
-              <div class="inline-flex">
+            <div class="col-md-4 centered">
+              <div class="row inline-flex">
                 {% for tag in item.type_de_voix %}
-                  <p class="btn btn-info centerIntroText taglist audio-content" id="{{tag.name}}">{{tag.name}}</p>
+                  <div class="col-xs-4">
+                    <p class="btn btn-info centerIntroText taglist audio-content" id="{{tag.name}}">{{tag.name}}</p>
+                  </div>
                 {% endfor %}
+                {% if item.type_de_voix|size == 2 %}
+                  <div class="col-xs-4"><p class="centerIntroText taglist audio-content transparent">Gapfiller</p></div>
+                {% elseif item.type_de_voix|size == 1 %}
+                  <div class="col-xs-4"><p class="centerIntroText taglist audio-content transparent">Gapfiller</p></div>
+                  <div class="col-xs-4"><p class="centerIntroText taglist audio-content transparent">Gapfiller</p></div>
+                {% endif %}
               </div>
             </div>
             <div class="col-md-4 centered">
-              <audio class="audio-content" id="{{item.name}}" controls preload="none">
+              <audio class="audio-item audio-content" id="{{item.name}}" controls preload="none">
                 <source src="{{item.media.url}}" type='audio/mp3' />
               </audio>
             </div>
-            <div class="col-md-2 centered">
-              <a href="{{item.media.url}}" download="{{item.media.url}}" class="btn btn-info center audio-content"><span class="glyphicon glyphicon-download-alt"></span> Télécharger</a>
+            <div class="col-md-1 centered">
+              <a href="{{item.media.url}}" download="{{item.media.url}}" class="btn btn-info center audio-content"><span class="glyphicon glyphicon-download-alt"></span></a>
             </div>
           </div>
         {% endfor %}

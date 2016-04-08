@@ -17,13 +17,17 @@
   </div>
 </div>
 <div class="row filters hidden">
-  {% for type in types %}
-  <div class="col-md-2 col-sm-3 col-xs-4 centered">
-    <a href="#" class="btn btn-info centered content-filter" id="{{type.name}}" onclick="toggle_visibility('{{type.name}}', event);">
-      <p>{{type.name}}</p>
-    </a>
+  <div class="col-md-12">
+    <div class="row">
+      {% for type in types %}
+      <div class="col-md-2 col-sm-3 col-xs-4 centered">
+        <a href="#" class="btn btn-info centered content-filter" id="{{type.name}}" onclick="toggle_visibility('{{type.name}}', event);">
+          <p>{{type.name}}</p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-  {% endfor %}
 </div>
 {% for item in content %}
     {% if count == 3 %}

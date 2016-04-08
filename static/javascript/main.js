@@ -9,7 +9,7 @@ $(document).ready(function() {
         url = "A regarder";
         break;
     case "/quisuisje/":
-        url = "Qui suis-je";
+        url = "Qui suis-je ?";
         break;
     case "/contactezmoi/":
         url = "Contactez-moi";
