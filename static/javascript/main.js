@@ -16,7 +16,7 @@ $(document).ready(function() {
         break;
     default:
         url = "Accueil";
-}
+      }
     // passes on every "a" tag
     $(".nav-item a").each(function() {
       var $anchorText = $(this).html();
@@ -30,7 +30,8 @@ $(document).ready(function() {
 function toggle_visibility(id, e) {
   e.preventDefault();
 
-var toBeFiltered = [];
+  var toBeFiltered = [];
+
   if($('a#'+id).hasClass("clicked")){
     $('span[id^="' + id + '"]').remove();
     $('a#'+id).removeClass("clicked");
@@ -42,12 +43,10 @@ var toBeFiltered = [];
   $('.content-filter').each(function(i, obj) {
     if($(this).hasClass("clicked")){
       var $id = $(this).attr('id');
-      //add the id of the this element to the array
       toBeFiltered.push($id);
     }
   });
-  //now loop through the array and hide the elements which do not have one of the array element as their class
-  console.log(toBeFiltered);
+
   $('.content-item').each(function(i, obj){
     var $currentItem = $(this);
     for(var j = 0; j < toBeFiltered.length; j++){

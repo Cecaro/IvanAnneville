@@ -6285,6 +6285,12 @@ button.close {
     display: none !important;
   }
 }
+.video-js .vjs-control-bar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
 .video-js {
   font-size: 10px;
   color: #ffffff;
@@ -6400,8 +6406,11 @@ a.top-margin {
 .first-page-element {
   margin-top: 40px;
 }
+.no-padding {
+  padding: 0;
+}
 .intro-banner {
-  height: 240px;
+  height: 210px;
   width: 100%;
   background-color: white;
 }
@@ -6424,15 +6433,15 @@ a.top-margin {
   text-decoration: none;
 }
 .main-header-container h4 {
-  font-size: 28px;
+  font-size: 24px;
 }
 .header-text {
   margin-top: 10px;
-  font-size: 78px;
+  font-size: 57px;
   color: black;
 }
 .header-img {
-  height: 78px;
+  height: 57px;
 }
 .main-logo {
   height: 150px;
@@ -6447,7 +6456,27 @@ a.top-margin {
   margin: 0;
 }
 .main-header-container > h3 {
-  font-size: 45px;
+  font-size: 36px;
+}
+@media (min-width: 992px) {
+  .header-text {
+    font-size: 78px;
+  }
+  .header-img {
+    height: 78px;
+  }
+  .main-header-container h3 {
+    font-size: 45px;
+  }
+  .main-header-container h4 {
+    font-size: 28px;
+  }
+  .intro-banner {
+    height: 240px;
+  }
+  .tv {
+    margin-top: 90px;
+  }
 }
 .navbar-static-top {
   background-color: #ffa07a;
@@ -6512,7 +6541,7 @@ a.active {
   margin: 0 auto;
 }
 .tv {
-  margin-top: 90px;
+  margin-top: 45px;
   z-index: -1;
 }
 .acceuil-content-container {
@@ -6521,6 +6550,7 @@ a.active {
   width: 650px;
   max-height: 350px;
   background-color: black;
+  min-width: 200px;
 }
 .acceuil-image {
   max-height: 100%;
@@ -6532,9 +6562,13 @@ a.active {
   justify-content: center;
   align-items: center;
 }
+.cameleon {
+  min-width: 100px;
+}
 .footer-text,
 .footer-text > a {
   color: white;
+  font-size: 13px;
 }
 .footer-text > a:hover {
   color: white;
