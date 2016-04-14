@@ -62,12 +62,13 @@
                   <div class="content-name centered">
                     <h3>{{item.name}}</h3>
                   </div>
+                  <div class="content-video centered">
                     <video id="{{item.name}}" class="video-js vjs-default-skin" width="360px" height="200px"
-                        controls preload="none" poster="{{item.img_poster|imageSize('auto','auto')}}"
-                        data-setup='{ "aspectRatio":"360:200", "playbackRates": [1, 1.5, 2] }'>
+                    controls preload="none" poster="{{item.img_poster|imageSize('auto','auto')}}">
                       <source src="{{item.media.url}}" type='video/mp4' />
                       <source src="{{item.media.url}}" type='video/webm' />
                     </video>
+                  </div>
                   <div class="centered">
                   {% for tag in item.type_de_voix %}
                     <p class="btn btn-info centerIntroText tags" id="{{tag.name}}">{{tag.name}}</p>
@@ -82,5 +83,4 @@
         {% endif %}
    {% endfor %}
 
-<script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
 {% endblock %}
