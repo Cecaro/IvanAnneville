@@ -81,6 +81,10 @@ a.top-margin{
 
 .page-title{
   line-height: 15px;
+  font-size: 23px;
+  @media (min-width: @screen-md-min) {
+      font-size: 36px;
+    }
 }
 
 .inline-block{
@@ -274,7 +278,7 @@ a.active{
   width: 650px;
   max-height: 350px;
   background-color: black;
-  min-width: 200px;
+  min-width: 215px;
 }
 
 .acceuil-image{
@@ -290,7 +294,7 @@ a.active{
 }
 
 .cameleon{
-  min-width: 100px;
+  min-width: 110px;
 }
 
 .footer-text, .footer-text > a{
@@ -303,6 +307,10 @@ a.active{
   text-decoration: none;
 }
 // Content styles
+.category-title-container, .audio-container{
+  max-width: 100%;
+}
+
 .content-filter{
   height: 30px;
   margin: 4px;
@@ -348,11 +356,14 @@ a.active{
 }
 
 .tagTitle{
-  font-size: 25px;
+  font-size: 20px;
+  @media(min-width: @screen-md-min) {
+    font-size: 25px;
+    }
 }
 
 .taglist{
-  width: 100px;
+  width: 95px;
   font-size: 15px;
     &:hover{
       cursor: default;
@@ -368,13 +379,18 @@ a.active{
 
 .audio-content{
   height: 30px;
-  margin-top: 10px;
-  margin-right: 10px;
+  @media(min-width: @screen-md-min) {
+    margin-top: 10px;
+    margin-right: 10px;
+    }
 }
 
 .section-head{
-  font-size: 32px;
+  font-size: 25px;
   line-height: 10px;
+  @media(min-width: @screen-md-min) {
+    font-size: 32px;
+    }
 }
 
 #Grave{

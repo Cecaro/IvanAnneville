@@ -35,13 +35,13 @@
   {% if category.audio_relationship|size > 0%}
     <div class="row centered" id="{{category.name}}">
       <div class="col-md-10">
-        <div class="row">
+        <div class="row category-title-container center">
           <div class="col-md-12 centered page-header">
             <h2 class="section-head site-color">{{category.name}}</h2>
           </div>
         </div>
         {% for item in category.audio_relationship %}
-          <div class="row content-item content-audio {% for tag in item.type_de_voix %}
+          <div class="row content-item content-audio audio-container center {% for tag in item.type_de_voix %}
             {{tag.name}}
           {% endfor %}">
             <div class="col-md-3 centered">
@@ -57,10 +57,10 @@
                   </div>
                 {% endfor %}
                 {% if item.type_de_voix|size == 2 %}
-                  <div class="col-xs-4"><p class="centerIntroText taglist audio-content transparent">Gapfiller</p></div>
+                  <div class="col-xs-4 no-padding"><p class="centerIntroText taglist audio-content transparent">Gapfiller</p></div>
                 {% elseif item.type_de_voix|size == 1 %}
-                  <div class="col-xs-4"><p class="centerIntroText taglist audio-content transparent">Gapfiller</p></div>
-                  <div class="col-xs-4"><p class="centerIntroText taglist audio-content transparent">Gapfiller</p></div>
+                  <div class="col-xs-4 no-padding"><p class="centerIntroText taglist audio-content transparent">Gapfiller</p></div>
+                  <div class="col-xs-4 no-padding"><p class="centerIntroText taglist audio-content transparent">Gapfiller</p></div>
                 {% endif %}
               </div>
             </div>

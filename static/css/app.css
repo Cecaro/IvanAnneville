@@ -6396,6 +6396,12 @@ a.top-margin {
 }
 .page-title {
   line-height: 15px;
+  font-size: 23px;
+}
+@media (min-width: 992px) {
+  .page-title {
+    font-size: 36px;
+  }
 }
 .inline-block {
   display: inline-block;
@@ -6550,7 +6556,7 @@ a.active {
   width: 650px;
   max-height: 350px;
   background-color: black;
-  min-width: 200px;
+  min-width: 215px;
 }
 .acceuil-image {
   max-height: 100%;
@@ -6563,7 +6569,7 @@ a.active {
   align-items: center;
 }
 .cameleon {
-  min-width: 100px;
+  min-width: 110px;
 }
 .footer-text,
 .footer-text > a {
@@ -6573,6 +6579,10 @@ a.active {
 .footer-text > a:hover {
   color: white;
   text-decoration: none;
+}
+.category-title-container,
+.audio-container {
+  max-width: 100%;
 }
 .content-filter {
   height: 30px;
@@ -6615,10 +6625,15 @@ a.active {
   margin: 5px 0;
 }
 .tagTitle {
-  font-size: 25px;
+  font-size: 20px;
+}
+@media (min-width: 992px) {
+  .tagTitle {
+    font-size: 25px;
+  }
 }
 .taglist {
-  width: 100px;
+  width: 95px;
   font-size: 15px;
 }
 .taglist:hover {
@@ -6632,12 +6647,21 @@ a.active {
 }
 .audio-content {
   height: 30px;
-  margin-top: 10px;
-  margin-right: 10px;
+}
+@media (min-width: 992px) {
+  .audio-content {
+    margin-top: 10px;
+    margin-right: 10px;
+  }
 }
 .section-head {
-  font-size: 32px;
+  font-size: 25px;
   line-height: 10px;
+}
+@media (min-width: 992px) {
+  .section-head {
+    font-size: 32px;
+  }
 }
 #Grave {
   background-color: red;
