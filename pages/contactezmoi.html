@@ -5,7 +5,7 @@
   <!-- for the form, look at formspree.io, it's free for up to 1000 emails per month! -->
 <div class="first-page-element">
 
-<form class="form-horizontal" action=" " method="post">
+<form class="form-horizontal" id="contact_form" method="POST">
   <fieldset class="centered">
 
   <legend class="centerIntroText site-color page-header"><h1 class="page-title">Contactez-moi</h1></legend>
@@ -61,13 +61,16 @@
     <div class="col-md-4 inputGroupContainer">
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-      	<textarea class="form-control" name="comment" placeholder="Message" required></textarea>
+      	<textarea class="form-control" name="comment" placeholder="Message" type="text" required></textarea>
       </div>
     </div>
   </div>
 
   <!-- Success message -->
   <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+  <!-- Bot prevention -->
+  <input type="text" name="_gotcha" style="display:none" />
 
   <!-- Button -->
   <div class="form-group">
@@ -77,13 +80,15 @@
     </div>
   </div>
 
+  <input type="hidden" name="_next" value="/thanks/" />
+
   </fieldset>
 </form>
 </div>
 <!-- /.container -->
 
 <script>
-  var contactform =  document.getElementById('contact_form');
-  contactform.setAttribute('action', '//formspree.io/' + 'rbcerovic' + '@' + 'gmail' + '.' + 'com');
+var contactform =  document.getElementById('contact_form');
+    contactform.setAttribute('action', '//formspree.io/' + 'ivan_anneville' + '@' + 'hotmail' + '.' + 'fr');
 </script>
 {% endblock %}
