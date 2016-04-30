@@ -10,82 +10,81 @@
 
     <form class="form-horizontal" id="contact_form" method="POST">
       <fieldset class="centered">
+        <legend class="centerIntroText site-color page-header"><h1 class="page-title">Contactez-moi</h1></legend>
 
-      <legend class="centerIntroText site-color page-header"><h1 class="page-title">Contactez-moi</h1></legend>
+        <div class="form-group row centered">
+            <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input name="Nom" placeholder="Nom" class="form-control"  type="text" required>
+            </div>
+          </div>
+        </div>
 
-      <div class="form-group row centered">
+        <div class="form-group row centered">
           <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input name="Nom" placeholder="Nom" class="form-control"  type="text" required>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  name="Prénom" placeholder="Prénom" class="form-control"  type="text" required>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group row centered">
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input  name="Prénom" placeholder="Prénom" class="form-control"  type="text" required>
+        <div class="form-group row centered">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input type="email" name="_replyto" placeholder="Votre email" class="form-control" required>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group row centered">
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-            <input type="email" name="_replyto" placeholder="Votre email" class="form-control" required>
+        <div class="form-group row centered">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
+              <input name="Société" placeholder="Société" class="form-control"  type="text" required>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group row centered">
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></span>
-            <input name="Société" placeholder="Société" class="form-control"  type="text" required>
+        <div class="form-group row centered">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+              <input name="Telephone" placeholder="Téléphone" class="form-control" type="text" required>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="form-group row centered">
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-            <input name="Telephone" placeholder="Téléphone" class="form-control" type="text" required>
+        <!-- Text area -->
+
+        <div class="form-group row centered">
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            	<textarea class="form-control" name="Message" placeholder="Message" type="text" required></textarea>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Text area -->
+        <input type="text" name="_format" value="plain" style="display:none" />
 
-      <div class="form-group row centered">
-        <div class="col-md-4 inputGroupContainer">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-          	<textarea class="form-control" name="Message" placeholder="Message" type="text" required></textarea>
+        <!-- hidden variable to get a subject -->
+        <input type="hidden" name="_subject" value="Contact du site" />
+
+        <!-- Bot prevention -->
+        <input type="text" name="_gotcha" style="display:none" />
+
+        <!-- Button -->
+        <div class="form-group row">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4 centered">
+            <button type="submit" class="btn btn-warning" >Envoyer <span class="glyphicon glyphicon-send"></span></button>
           </div>
         </div>
-      </div>
 
-      <input type="text" name="_format" value="plain" style="display:none" />
-
-      <!-- hidden variable to get a subject -->
-      <input type="hidden" name="_subject" value="Contact du site" />
-
-      <!-- Bot prevention -->
-      <input type="text" name="_gotcha" style="display:none" />
-
-      <!-- Button -->
-      <div class="form-group row">
-        <label class="col-md-4 control-label"></label>
-        <div class="col-md-4 centered">
-          <button type="submit" class="btn btn-warning" >Envoyer <span class="glyphicon glyphicon-send"></span></button>
-        </div>
-      </div>
-
-      <input type="hidden" name="_next" value="/thanks/" />
+        <input type="hidden" name="_next" value="/thanks/" />
 
       </fieldset>
     </form>
