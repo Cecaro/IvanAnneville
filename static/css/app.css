@@ -6737,6 +6737,9 @@ a.active {
 legend {
   width: 60%;
 }
+legend.center {
+  margin-bottom: 20px;
+}
 .form-control {
   height: 45px;
   font-size: 18px;
