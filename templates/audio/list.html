@@ -6,7 +6,7 @@
 
 {% set content = cms.audio %}
 {% set types = cms.typesdevoix %}
-{% set categories = cms.categories %}
+{% set categories = cms.categories|sort('position') %}
 
 {% set size = content|size %}
 {% set part = size%3 %}
