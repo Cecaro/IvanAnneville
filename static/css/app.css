@@ -6598,6 +6598,10 @@ a.active {
   border-top: 4px;
   margin-bottom: 12px;
 }
+.content-name h3 {
+  margin-top: 30px;
+  position: relative;
+}
 .filter-btn {
   display: inline-block;
   cursor: pointer;
@@ -6623,6 +6627,14 @@ a.active {
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   margin: 5px 0;
+}
+.content-actu {
+  border-radius: 4px;
+  background-color: crimson;
+  position: absolute;
+}
+.content-actu h4 {
+  margin: 5px;
 }
 .tagTitle {
   font-size: 20px;
@@ -6662,6 +6674,11 @@ a.active {
   .section-head {
     font-size: 32px;
   }
+}
+.tags {
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: white;
 }
 #Grave {
   background-color: red;
@@ -6718,6 +6735,14 @@ a.active {
 #Enjoué {
   background-color: #ff6600;
   border-color: #ff6600;
+}
+#Complice {
+  background-color: darkkhaki;
+  border-color: darkkhaki;
+}
+#Doux {
+  background-color: purple;
+  border-color: purple;
 }
 .picture-row {
   margin-bottom: 20px;

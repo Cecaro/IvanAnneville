@@ -3,7 +3,7 @@
 {% block title %}{% parent %} - videos{% endblock %}
 
 {% block content %}
-{% set content = cms.videos|sort('index') %}
+{% set content = cms.videos|sort('index', true) %}
 {% set types = cms.typesdevoix %}
 
 {% set size = content|size %}
@@ -58,8 +58,17 @@
     {% endif %}
 
                 {% set count = count + 1 %}
+                
                 <div class="content-background">
+
                   <div class="content-name centered">
+                  {% for category in item.category %}
+                    {% if category == "Actualité" %}
+                      <div class="content-actu">
+                        <h4>Actualité</h4>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
                     <h3>{{item.name}}</h3>
                   </div>
                   <div class="content-video centered">
@@ -71,7 +80,7 @@
                   </div>
                   <div class="centered">
                   {% for tag in item.type_de_voix %}
-                    <p class="btn btn-info centerIntroText tags" id="{{tag.name}}">{{tag.name}}</p>
+                    <p class="centerIntroText tags" id="{{tag.name}}">{{tag.name}}</p>
                   {% endfor %}
                   </div>
                   <a href="{{item.media.url}}" download="{{item.media.url}}" class="btn btn-info center top-margin"><span class="glyphicon glyphicon-download-alt"></span> Télécharger</a>
