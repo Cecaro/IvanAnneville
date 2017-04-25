@@ -6439,7 +6439,7 @@ a.top-margin {
   text-decoration: none;
 }
 .main-header-container h4 {
-  font-size: 24px;
+  font-size: 1.6em;
 }
 .header-text {
   margin-top: 10px;
@@ -6599,6 +6599,7 @@ a.active {
   margin-bottom: 12px;
 }
 .content-name h3 {
+  font-size: 1.4em;
   margin-top: 30px;
   position: relative;
 }
