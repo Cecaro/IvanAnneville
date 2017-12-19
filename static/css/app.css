@@ -6415,6 +6415,11 @@ a.top-margin {
 .no-padding {
   padding: 0;
 }
+.flex-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .intro-banner {
   height: 210px;
   width: 100%;
@@ -6744,6 +6749,10 @@ a.active {
 #Doux {
   background-color: purple;
   border-color: purple;
+}
+#Journalistique {
+  background-color: beige;
+  border-color: beige;
 }
 .picture-row {
   margin-bottom: 20px;

@@ -1,0 +1,22 @@
+{% extends "templates/partials/base.html" %}
+
+{% set name = 'Courts Métrages' %}
+
+
+{% block title %}{% parent %} - Courts Métrages{% endblock %}
+{% block content %}
+
+<div class="row first-page-element">
+  <div class="col-md-10 col-md-push-1 color-background">
+    <p class="description centerIntroText">Ici, vous allez pouvoir découvrir les courts métrages dans lesquels j'ai eu le plaisir de participer. </br></br>
+    N'hésitez pas à partager les vidéos, et bon visionnage !</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 flex-content">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/JeEGkKHv1qo?rel=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+{% endblock %}
