@@ -6645,11 +6645,6 @@ a.active {
 .tagTitle {
   font-size: 20px;
 }
-@media (min-width: 992px) {
-  .tagTitle {
-    font-size: 25px;
-  }
-}
 .taglist {
   width: 95px;
   font-size: 15px;
